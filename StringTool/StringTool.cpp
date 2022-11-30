@@ -1,5 +1,7 @@
 #include "StringTool.h"
 
+#include <functional>
+
 #pragma region C++ 언어 표준 C++17 미만
 // 앞에 있는 개행 문자 제거
 std::string& MOONG::StringTool::ltrim(std::string& s)

@@ -8,7 +8,6 @@
 #define _STRING_TOOL_H_
 
 #include <iostream>
-#include <functional>
 
 namespace MOONG
 {
