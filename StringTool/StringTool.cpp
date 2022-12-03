@@ -57,17 +57,17 @@ std::string& MOONG::StringTool::trim(std::string& s)
 
 
 // trim from start (copying)
-std::string MOONG::StringTool::ltrim_copy(std::string s)
+const std::string MOONG::StringTool::ltrim_copy(std::string s)
 {
 	return MOONG::StringTool::ltrim(s);
 }
 // trim from end (copying)
-std::string MOONG::StringTool::rtrim_copy(std::string s)
+const std::string MOONG::StringTool::rtrim_copy(std::string s)
 {
 	return MOONG::StringTool::rtrim(s);
 }
 // trim from both ends (copying)
-std::string MOONG::StringTool::trim_copy(std::string s)
+const std::string MOONG::StringTool::trim_copy(std::string s)
 {
 	return MOONG::StringTool::trim(s);
 }
