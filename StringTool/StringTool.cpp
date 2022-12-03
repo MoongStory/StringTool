@@ -71,3 +71,15 @@ const std::string MOONG::StringTool::trim_copy(std::string s)
 {
 	return MOONG::StringTool::trim(s);
 }
+
+const int MOONG::StringTool::compare(const std::string string1, const std::string string2, bool ignoreCase)
+{
+	if (ignoreCase)
+	{
+		return _stricmp(string1.c_str(), string2.c_str());
+	}
+	else
+	{
+		return string1.compare(string2);
+	}
+}
