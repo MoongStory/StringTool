@@ -30,6 +30,52 @@ std::string MOONG::StringTool::remove_keep_origin(std::string str, const std::st
 	return MOONG::StringTool::remove(str, remove_string);
 }
 
+const std::vector<std::string> MOONG::StringTool::split(const std::string str, const std::string delimiters)
+{
+	size_t index_temp = 0;
+	size_t index_nexe_token = INT32_MAX;
+	size_t index_prev_token = 0;
+	bool is_find_token = false;
+
+	std::vector<std::string> return_value;
+
+	for (;;)
+	{
+		is_find_token = false;
+
+		for (int i = 0; i < delimiters.length(); i++)
+		{
+			index_temp = str.find(delimiters.at(i), index_prev_token);
+
+			if (index_temp != std::string::npos)
+			{
+				is_find_token = true;
+				
+				if (index_temp < index_nexe_token)
+				{
+					index_nexe_token = index_temp;
+				}
+			}
+		}
+
+		if (is_find_token == false)
+		{
+			return_value.push_back(str.substr(index_prev_token));
+
+			break;
+		}
+		else
+		{
+			return_value.push_back(str.substr(index_prev_token, index_nexe_token - index_prev_token));
+
+			index_prev_token = index_nexe_token + 1;
+			index_nexe_token = INT32_MAX;
+		}
+	}
+
+	return return_value;
+}
+
 std::string& MOONG::StringTool::tolower(std::string& str)
 {
 	std::transform(str.begin(), str.end(), str.begin(), ::tolower);

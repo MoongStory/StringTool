@@ -8,6 +8,7 @@
 #define _STRING_TOOL_H_
 
 #include <iostream>
+#include <vector>
 
 namespace MOONG
 {
@@ -20,8 +21,12 @@ namespace MOONG
 	public:
 		static const int compare(const std::string string1, const std::string string2, bool ignoreCase = false);
 
+		//TODO: format 기능 추가.
+
 		static std::string& remove(std::string& str, const std::string remove_string);
 		static std::string remove_keep_origin(std::string str, const std::string remove_string);
+
+		static const std::vector<std::string> split(const std::string str, const std::string delimiters);
 
 		static std::string& tolower(std::string& str);
 		static std::string& toupper(std::string& str);

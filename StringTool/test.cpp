@@ -44,6 +44,17 @@ int main()
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;
+
+	temp_string = "a,bc..cde.f";
+	std::vector<std::string> after_parse = MOONG::StringTool::split(temp_string, ",.");
+	for (size_t i  = 0; i < after_parse.size(); i++)
+	{
+		std::cout << "split[" << after_parse.at(i) << "]" << std::endl;
+	}
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
 	
 	temp_string = "UPPER CASE";
 	std::cout << "tolower [" << MOONG::StringTool::tolower(temp_string).c_str() << "]" << std::endl;
