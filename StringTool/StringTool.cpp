@@ -3,6 +3,11 @@
 #include <functional>
 #include <algorithm>	// std::transform 사용을 위해 필요.
 
+#include <windows.h>
+#include <strsafe.h>
+
+const unsigned int MOONG::StringTool::max_buf_size_ = 2048;
+
 const int MOONG::StringTool::compare(const std::string string1, const std::string string2, bool ignoreCase)
 {
 	if (ignoreCase)
@@ -13,6 +18,21 @@ const int MOONG::StringTool::compare(const std::string string1, const std::strin
 	{
 		return string1.compare(string2);
 	}
+}
+
+std::string MOONG::StringTool::format(const std::string format, ...)
+{
+	char build_string[MOONG::StringTool::max_buf_size_] = { 0 };
+
+	va_list arg_ptr;
+
+	va_start(arg_ptr, format);
+	
+	StringCchVPrintfA(build_string, MOONG::StringTool::max_buf_size_, format.c_str(), arg_ptr);
+
+	va_end(arg_ptr);
+
+	return std::string(build_string);
 }
 
 std::string& MOONG::StringTool::remove(std::string& str, const std::string remove_string)

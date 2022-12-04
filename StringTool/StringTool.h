@@ -17,11 +17,12 @@ namespace MOONG
 	public:
 	protected:
 	private:
+		static const unsigned int max_buf_size_;
 
 	public:
 		static const int compare(const std::string string1, const std::string string2, bool ignoreCase = false);
 
-		//TODO: format 기능 추가.
+		static std::string format(const std::string format, ...);
 
 		static std::string& remove(std::string& str, const std::string remove_string);
 		static std::string remove_keep_origin(std::string str, const std::string remove_string);
