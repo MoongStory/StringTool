@@ -8,7 +8,11 @@
 
 const unsigned int MOONG::StringTool::max_buf_size_ = 2048;
 
-const int MOONG::StringTool::compare(const std::string string1, const std::string string2, bool ignoreCase)
+#ifndef INT32_MAX
+#define INT32_MAX 2147483647 
+#endif
+
+const int MOONG::StringTool::compare(const std::string string1, const std::string string2, const bool ignoreCase)
 {
 	if (ignoreCase)
 	{
@@ -18,6 +22,16 @@ const int MOONG::StringTool::compare(const std::string string1, const std::strin
 	{
 		return string1.compare(string2);
 	}
+}
+
+const std::string  MOONG::StringTool::CutTail(std::string str, const char delimiter)
+{
+	if(str.rfind(delimiter) != std::string::npos)
+	{
+		str.erase(str.rfind(delimiter), str.length() - str.rfind(delimiter));
+	}
+	
+	return str;
 }
 
 std::string MOONG::StringTool::format(const std::string format, ...)
@@ -50,7 +64,30 @@ std::string MOONG::StringTool::remove_keep_origin(std::string str, const std::st
 	return MOONG::StringTool::remove(str, remove_string);
 }
 
-const std::vector<std::string> MOONG::StringTool::split(const std::string str, const std::string delimiters)
+std::string& MOONG::StringTool::replace(std::string& str, const std::string str_find, const std::string str_change)
+{
+	while(str.find(str_find) != std::string::npos)
+	{
+		str.replace(str.find(str_find), str_find.length(), str_change);
+	}
+
+	return str;
+}
+
+std::string MOONG::StringTool::replace_keep_origin(std::string str, const std::string str_find, const std::string str_change)
+{
+	return MOONG::StringTool::replace(str, str_find, str_change);
+}
+
+const std::vector<std::string> MOONG::StringTool::split(const std::string str, const char delimiter)
+{
+	std::string delimiters;
+	delimiters.push_back(delimiter);
+
+	return MOONG::StringTool::split(str, delimiters);
+}
+
+const std::vector<std::string> MOONG::StringTool::split(const std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
 	size_t index_temp = 0;
 	size_t index_nexe_token = INT32_MAX;
@@ -63,17 +100,31 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string str, c
 	{
 		is_find_token = false;
 
-		for (int i = 0; i < delimiters.length(); i++)
+		if(delimiter_whole_use == true) // delimiters 문자열 전체를 하나의 구분자로 사용.
 		{
-			index_temp = str.find(delimiters.at(i), index_prev_token);
+			index_temp = str.find(delimiters, index_prev_token);
 
 			if (index_temp != std::string::npos)
 			{
 				is_find_token = true;
-				
-				if (index_temp < index_nexe_token)
+
+				index_nexe_token = index_temp;
+			}
+		}
+		else
+		{
+			for (size_t i = 0; i < delimiters.length(); i++)
+			{
+				index_temp = str.find(delimiters.at(i), index_prev_token);
+
+				if (index_temp != std::string::npos)
 				{
-					index_nexe_token = index_temp;
+					is_find_token = true;
+
+					if (index_temp < index_nexe_token)
+					{
+						index_nexe_token = index_temp;
+					}
 				}
 			}
 		}
@@ -88,7 +139,15 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string str, c
 		{
 			return_value.push_back(str.substr(index_prev_token, index_nexe_token - index_prev_token));
 
-			index_prev_token = index_nexe_token + 1;
+			if(delimiter_whole_use == true)
+			{
+				index_prev_token = index_nexe_token + delimiters.length();
+			}
+			else
+			{
+				index_prev_token = index_nexe_token + 1;
+			}
+			
 			index_nexe_token = INT32_MAX;
 		}
 	}
@@ -120,18 +179,52 @@ std::string MOONG::StringTool::toupper_keep_origin(std::string str)
 	return MOONG::StringTool::toupper(str);
 }
 
-#pragma region C++ 언어 표준 C++17 미만
+//#pragma region C++ 언어 표준 C++17 미만
 // 앞에 있는 개행 문자 제거
 std::string& MOONG::StringTool::trim_left(std::string& str)
 {
-	str.erase(str.begin(), std::find_if(str.begin(), str.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
+	if(str.length() == 0)
+	{
+		return str;
+	}
+
+	size_t index = 0;
+
+	for(size_t i = 0; i < str.length(); i++)
+	{
+		if(str.at(i) != ' ' && str.at(i) != '\t' && str.at(i) != '\n' && str.at(i) != '\r\n')
+		{
+			index = i;
+
+			break;
+		}
+	}
+
+	str.erase(0, index);
 
 	return str;
 }
 // 뒤에 있는 개행 문자 제거
 std::string& MOONG::StringTool::trim_right(std::string& str)
 {
-	str.erase(std::find_if(str.rbegin(), str.rend(), std::not1(std::ptr_fun<int, int>(std::isspace))).base(), str.end());
+	if(str.length() == 0)
+	{
+		return str;
+	}
+
+	size_t index = 0;
+
+	for(size_t i = str.length() - 1; i >= 0; i--)
+	{
+		if(str.at(i) != ' ' && str.at(i) != '\t' && str.at(i) != '\n' && str.at(i) != '\r\n')
+		{
+			index = i + 1;
+
+			break;
+		}
+	}
+
+	str.erase(index);
 
 	return str;
 }
@@ -140,11 +233,11 @@ std::string& MOONG::StringTool::trim(std::string& str)
 {
 	return trim_left(trim_right(str));
 }
-#pragma endregion C++ 언어 표준 C++17 미만
+//#pragma endregion C++ 언어 표준 C++17 미만
 
 
 
-#pragma region C++ 언어 표준 C++17 이상
+//#pragma region C++ 언어 표준 C++17 이상
 //// trim from start (in place)
 //std::string& MOONG::StringTool::trim_left(std::string& str)
 //{
@@ -168,7 +261,7 @@ std::string& MOONG::StringTool::trim(std::string& str)
 //{
 //	return ltrim(rtrim(str));
 //}
-#pragma endregion C++ 언어 표준 C++17 이상
+//#pragma endregion C++ 언어 표준 C++17 이상
 
 
 
