@@ -20,6 +20,21 @@ int main()
 	std::cout << std::endl;
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	std::cout << "C:\\Program Files (x86)\\Microsoft Visual Studio" << std::endl;
+	for (size_t i = 0; i < temp_string.length(); i++)
+	{
+		std::cout << i % 10;
+	}
+	std::cout << std::endl;
+	std::cout << "FindIndexRightmost [" << MOONG::StringTool::FindIndexRightmost(temp_string, '\\') << "]" << std::endl;
+	std::cout << "FindIndexRightmost [" << MOONG::StringTool::FindIndexRightmost(temp_string, std::string("Visual")) << "]" << std::endl;
+	std::cout << "FindIndexRightmost [" << MOONG::StringTool::FindIndexRightmost(temp_string, std::string("Visual"), true) << "]" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
 	std::cout << "TailCut before[" << temp_string << "]" << std::endl;
 	std::cout << "TailCut [" << MOONG::StringTool::TailCut(temp_string, '\\').c_str() << "]" << std::endl;
 	std::cout << "TailCut after[" << temp_string << "]" << std::endl;
@@ -35,22 +50,75 @@ int main()
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
 	std::cout << "TailCut before[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut [" << MOONG::StringTool::TailCut(temp_string, std::string(":\\ ")).c_str() << "]" << std::endl;
+	std::cout << "TailCut [" << MOONG::StringTool::TailCut(temp_string, std::string("Microsoft")).c_str() << "]" << std::endl;
 	std::cout << "TailCut after[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
 	std::cout << "TailCut_keep_origin before[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut_keep_origin [" << MOONG::StringTool::TailCut_keep_origin(temp_string, std::string(":\\ ")).c_str() << "]" << std::endl;
+	std::cout << "TailCut_keep_origin [" << MOONG::StringTool::TailCut_keep_origin(temp_string, std::string("Microsoft")).c_str() << "]" << std::endl;
 	std::cout << "TailCut_keep_origin after[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
 	std::cout << "TailCut before[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut [" << MOONG::StringTool::TailCut(temp_string, std::string("(x86)"), true).c_str() << "]" << std::endl;
+	std::cout << "TailCut [" << MOONG::StringTool::TailCut(temp_string, std::string("Microsoft"), true).c_str() << "]" << std::endl;
 	std::cout << "TailCut after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "TailCut before[" << temp_string << "]" << std::endl;
+	std::cout << "TailCut [" << MOONG::StringTool::TailCut(temp_string, std::string("Microsoft"), true).c_str() << "]" << std::endl;
+	std::cout << "TailCut after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	std::cout << "TailPop before[" << temp_string << "]" << std::endl;
+	std::cout << "TailPop [" << MOONG::StringTool::TailPop(temp_string, std::string("Microsoft")).c_str() << "]" << std::endl;
+	std::cout << "TailPop after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "TailPop before[" << temp_string << "]" << std::endl;
+	std::cout << "TailPop [" << MOONG::StringTool::TailPop(temp_string, std::string("Microsoft")).c_str() << "]" << std::endl;
+	std::cout << "TailPop after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "TailPop before[" << temp_string << "]" << std::endl;
+	std::cout << "TailPop [" << MOONG::StringTool::TailPop(temp_string, std::string("Microsoft")).c_str() << "]" << std::endl;
+	std::cout << "TailPop after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "TailPop before[" << temp_string << "]" << std::endl;
+	std::cout << "TailPop [" << MOONG::StringTool::TailPop(temp_string, std::string("Microsoft")).c_str() << "]" << std::endl;
+	std::cout << "TailPop after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio Studio";
+	std::cout << "TailPop before[" << temp_string << "]" << std::endl;
+	std::cout << "TailPop [" << MOONG::StringTool::TailPop(temp_string, std::string("Studio"), true).c_str() << "]" << std::endl;
+	std::cout << "TailPop after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "TailPop before[" << temp_string << "]" << std::endl;
+	std::cout << "TailPop [" << MOONG::StringTool::TailPop(temp_string, std::string("StudioA"), true).c_str() << "]" << std::endl;
+	std::cout << "TailPop after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	std::cout << "TailPop before[" << temp_string << "]" << std::endl;
+	std::cout << "TailPop [" << MOONG::StringTool::TailPop(temp_string, '\\').c_str() << "]" << std::endl;
+	std::cout << "TailPop after[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << std::endl;

@@ -22,13 +22,18 @@ namespace MOONG
 	public:
 		static const int compare(const std::string string1, const std::string string2, const bool ignoreCase = false);
 
+		static const size_t FindIndexRightmost(const std::string str, const char delimiter);
+		static const size_t FindIndexRightmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
+
 		static const std::string& TailCut(std::string& str, const char delimiter);
 		static const std::string TailCut_keep_origin(std::string str, const char delimiter);
 		static const std::string& TailCut(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
 		static const std::string TailCut_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
-		// TODO: PopTail 기능 추가.
-		// TDOO: CutHead 기능 추가.
-		// TODO: PopHead 기능 추가.
+
+		static const std::string TailPop(std::string& str, const char delimiter);
+		static const std::string TailPop(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
+		// TDOO: HeadCut 기능 추가.
+		// TODO: HeadPop 기능 추가.
 
 		static std::string format(const std::string format, ...);
 
