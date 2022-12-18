@@ -35,6 +35,7 @@ const size_t MOONG::StringTool::FindIndexRightmost(const std::string str, const 
 const size_t MOONG::StringTool::FindIndexRightmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
 	size_t index_rightmost = 0;
+	bool isFindDelimiter = false;
 
 	if (delimiter_whole_use == true)
 	{
@@ -42,18 +43,31 @@ const size_t MOONG::StringTool::FindIndexRightmost(const std::string str, const 
 		{
 			index_rightmost = str.rfind(delimiters);
 		}
+		else
+		{
+			return std::string::npos;
+		}
 	}
 	else
 	{
+		isFindDelimiter = false;
+
 		for (size_t i = 0; i < delimiters.length(); i++)
 		{
 			if (str.rfind(delimiters[i]) != std::string::npos)
 			{
+				isFindDelimiter = true;
+
 				if (str.rfind(delimiters[i]) > index_rightmost)
 				{
 					index_rightmost = str.rfind(delimiters[i]);
 				}
 			}
+		}
+
+		if (isFindDelimiter == false)
+		{
+			return std::string::npos;
 		}
 	}
 	
@@ -80,7 +94,7 @@ const std::string& MOONG::StringTool::TailCut(std::string& str, const std::strin
 {
 	size_t index_right_most = MOONG::StringTool::FindIndexRightmost(str, delimiters, delimiter_whole_use);
 
-	if (index_right_most > 0)
+	if (index_right_most != std::string::npos)
 	{
 		str.erase(index_right_most, str.length() - index_right_most);
 	}
@@ -107,7 +121,7 @@ const std::string MOONG::StringTool::TailPop(std::string& str, const std::string
 
 	size_t index_right_most = MOONG::StringTool::FindIndexRightmost(str, delimiters, delimiter_whole_use);
 
-	if (index_right_most > 0)
+	if (index_right_most != std::string::npos)
 	{
 		if (delimiter_whole_use == true)
 		{
