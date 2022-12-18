@@ -33,28 +33,42 @@ int main()
 
 	delimiter = '\\';
 	delimiters = "Visual";
-	std::cout << "FindIndexRightmost 구분자[" << delimiter << "] 사용\n\t인덱스[" << MOONG::StringTool::FindIndexRightmost(temp_string, delimiter) << "]" << std::endl;
-	std::cout << "FindIndexRightmost 구분자[" << delimiters << "] 사용\n\t인덱스[" << MOONG::StringTool::FindIndexRightmost(temp_string, delimiters) << "]" << std::endl;
-	std::cout << "FindIndexRightmost 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t인덱스[" << MOONG::StringTool::FindIndexRightmost(temp_string, delimiters, true) << "]" << std::endl;
+	std::cout << "find_index_rightmost 구분자[" << delimiter << "] 사용\n\t인덱스[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiter) << "]" << std::endl;
+	std::cout << "find_index_rightmost 구분자[" << delimiters << "] 사용\n\t인덱스[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiters) << "]" << std::endl;
+	std::cout << "find_index_rightmost 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t인덱스[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiters, true) << "]" << std::endl;
 
 	delimiters = "VisualA";
-	if (MOONG::StringTool::FindIndexRightmost(temp_string, delimiters, true) == std::string::npos)
+	if (MOONG::StringTool::find_index_rightmost(temp_string, delimiters, true) == std::string::npos)
 	{
-		std::cout << "FindIndexRightmost 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t[못찾음]" << std::endl;
+		std::cout << "find_index_rightmost 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t[못찾음]" << std::endl;
+	}
+
+	std::cout << std::endl;
+
+	delimiter = '\\';
+	delimiters = "Visual";
+	std::cout << "find_index_leftmost 구분자[" << delimiter << "] 사용\n\t인덱스[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiter) << "]" << std::endl;
+	std::cout << "find_index_leftmost 구분자[" << delimiters << "] 사용\n\t인덱스[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiters) << "]" << std::endl;
+	std::cout << "find_index_leftmost 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t인덱스[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiters, true) << "]" << std::endl;
+
+	delimiters = "VisualA";
+	if (MOONG::StringTool::find_index_leftmost(temp_string, delimiters, true) == std::string::npos)
+	{
+		std::cout << "find_index_leftmost 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t[못찾음]" << std::endl;
 	}
 
 	std::cout << std::endl;
 	std::cout << std::endl;
 	std::cout << std::endl;
 
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 	std::cout << "cut_right 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::cut_right(temp_string, delimiter).c_str() << "]" << std::endl;
 	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
 	std::cout << "cut_right_keep_origin 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::cut_right_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
 	std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
@@ -62,21 +76,21 @@ int main()
 	std::cout << std::endl;
 
 	delimiters = "Microsoft";
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 	std::cout << "cut_right 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::cut_right(temp_string, delimiters).c_str() << "]" << std::endl;
 	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
 	std::cout << "cut_right_keep_origin 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::cut_right_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
 	std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 	std::cout << "cut_right 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::cut_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	std::cout << "cut_right[" << temp_string << "]" << std::endl;
@@ -185,6 +199,56 @@ int main()
 	std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
 	std::cout << "pop_right_keep_origin 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
 	std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+	std::cout << "cut_left 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::cut_left(temp_string, delimiter).c_str() << "]" << std::endl;
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "cut_left_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "cut_left_keep_origin 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::cut_left_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
+	std::cout << "cut_left_keep_origin[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	delimiters = "Microsoft";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+	std::cout << "cut_left 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::cut_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "cut_left_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "cut_left_keep_origin 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::cut_left_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "cut_left_keep_origin[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+	std::cout << "cut_left 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+	std::cout << "cut_left 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+	std::cout << "cut_left 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "cut_left[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << std::endl;

@@ -22,8 +22,11 @@ namespace MOONG
 	public:
 		static const int compare(const std::string string1, const std::string string2, const bool ignoreCase = false);
 
-		static const size_t FindIndexRightmost(const std::string str, const char delimiter);
-		static const size_t FindIndexRightmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
+		static const size_t find_index_rightmost(const std::string str, const char delimiter);
+		static const size_t find_index_rightmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
+
+		static const size_t find_index_leftmost(const std::string str, const char delimiter);
+		static const size_t find_index_leftmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
 
 		static const std::string& cut_right(std::string& str, const char delimiter);
 		static const std::string cut_right_keep_origin(std::string str, const char delimiter);
@@ -34,7 +37,12 @@ namespace MOONG
 		static const std::string pop_right_keep_origin(std::string str, const char delimiter);
 		static const std::string pop_right(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
 		static const std::string pop_right_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
-		// TDOO: cut_left 기능 추가.
+
+		static const std::string& cut_left(std::string& str, const char delimiter);
+		static const std::string cut_left_keep_origin(std::string str, const char delimiter);
+		static const std::string& cut_left(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
+		static const std::string cut_left_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
+
 		// TODO: pop_left 기능 추가.
 
 		static std::string format(const std::string format, ...);
