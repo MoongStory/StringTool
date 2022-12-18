@@ -22,8 +22,10 @@ namespace MOONG
 	public:
 		static const int compare(const std::string string1, const std::string string2, const bool ignoreCase = false);
 
-		static const std::string CutTail(std::string str, const char delimiter);
-		// TODO: static const std::string CutTail(std::string str, const std::string delimiters, const bool delimiter_whole_use = false); 기능 추가
+		static const std::string& CutTail(std::string& str, const char delimiter);
+		static const std::string CutTail_keep_origin(std::string str, const char delimiter);
+		static const std::string& CutTail(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
+		static const std::string CutTail_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
 		// TODO: PopTail 기능 추가.
 		// TDOO: CutHead 기능 추가.
 		// TODO: PopHead 기능 추가.

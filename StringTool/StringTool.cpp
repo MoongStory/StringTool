@@ -24,14 +24,58 @@ const int MOONG::StringTool::compare(const std::string string1, const std::strin
 	}
 }
 
-const std::string  MOONG::StringTool::CutTail(std::string str, const char delimiter)
+const std::string& MOONG::StringTool::CutTail(std::string& str, const char delimiter)
 {
-	if(str.rfind(delimiter) != std::string::npos)
+	std::string delimiters;
+	delimiters.push_back(delimiter);
+
+	return MOONG::StringTool::CutTail(str, delimiters);
+}
+
+const std::string  MOONG::StringTool::CutTail_keep_origin(std::string str, const char delimiter)
+{
+	std::string delimiters;
+	delimiters.push_back(delimiter);
+
+	return MOONG::StringTool::CutTail(str, delimiters);
+}
+
+const std::string& MOONG::StringTool::CutTail(std::string& str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+{
+	size_t index_right_most = 0;
+
+	if (delimiter_whole_use == true)
 	{
-		str.erase(str.rfind(delimiter), str.length() - str.rfind(delimiter));
+		if (str.rfind(delimiters) != std::string::npos)
+		{
+			index_right_most = str.rfind(delimiters);
+		}
 	}
-	
+	else
+	{
+		for (size_t i = 0; i < delimiters.length(); i++)
+		{
+			if (str.rfind(delimiters[i]) != std::string::npos)
+			{
+				if (str.rfind(delimiters[i]) > index_right_most)
+				{
+					index_right_most = str.rfind(delimiters[i]);
+				}
+			}
+		}
+	}
+
+	if (index_right_most > 0)
+	{
+		str.erase(index_right_most, str.length() - index_right_most);
+	}
+
 	return str;
+}
+
+const std::string MOONG::StringTool::CutTail_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+{
+	return MOONG::StringTool::CutTail(str, delimiters, delimiter_whole_use);
 }
 
 std::string MOONG::StringTool::format(const std::string format, ...)

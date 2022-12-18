@@ -20,7 +20,37 @@ int main()
 	std::cout << std::endl;
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
-	std::cout << "format [" << MOONG::StringTool::CutTail(temp_string, '\\').c_str() << "]" << std::endl;
+	std::cout << "CutTail before[" << temp_string << "]" << std::endl;
+	std::cout << "CutTail [" << MOONG::StringTool::CutTail(temp_string, '\\').c_str() << "]" << std::endl;
+	std::cout << "CutTail after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	std::cout << "CutTail_keep_origin before[" << temp_string << "]" << std::endl;
+	std::cout << "CutTail_keep_origin [" << MOONG::StringTool::CutTail_keep_origin(temp_string, '\\').c_str() << "]" << std::endl;
+	std::cout << "CutTail_keep_origin after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	std::cout << "CutTail before[" << temp_string << "]" << std::endl;
+	std::cout << "CutTail [" << MOONG::StringTool::CutTail(temp_string, std::string(":\\ ")).c_str() << "]" << std::endl;
+	std::cout << "CutTail after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	std::cout << "CutTail_keep_origin before[" << temp_string << "]" << std::endl;
+	std::cout << "CutTail_keep_origin [" << MOONG::StringTool::CutTail_keep_origin(temp_string, std::string(":\\ ")).c_str() << "]" << std::endl;
+	std::cout << "CutTail_keep_origin after[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	std::cout << "CutTail before[" << temp_string << "]" << std::endl;
+	std::cout << "CutTail [" << MOONG::StringTool::CutTail(temp_string, std::string("(x86)"), true).c_str() << "]" << std::endl;
+	std::cout << "CutTail after[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << std::endl;
