@@ -107,23 +107,23 @@ const std::string MOONG::StringTool::cut_right_keep_origin(std::string str, cons
 	return MOONG::StringTool::cut_right(str, delimiters, delimiter_whole_use);
 }
 
-const std::string MOONG::StringTool::TailPop(std::string& str, const char delimiter)
+const std::string MOONG::StringTool::pop_right(std::string& str, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::TailPop(str, delimiters);
+	return MOONG::StringTool::pop_right(str, delimiters);
 }
 
-const std::string MOONG::StringTool::TailPop_keep_origin(std::string str, const char delimiter)
+const std::string MOONG::StringTool::pop_right_keep_origin(std::string str, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::TailPop(str, delimiters);
+	return MOONG::StringTool::pop_right(str, delimiters);
 }
 
-const std::string MOONG::StringTool::TailPop(std::string& str, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::pop_right(std::string& str, const std::string delimiters, const bool delimiter_whole_use)
 {
 	std::string tail = "";
 
@@ -152,9 +152,9 @@ const std::string MOONG::StringTool::TailPop(std::string& str, const std::string
 	return tail;
 }
 
-const std::string MOONG::StringTool::TailPop_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::pop_right_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use)
 {
-	return MOONG::StringTool::TailPop(str, delimiters, delimiter_whole_use);
+	return MOONG::StringTool::pop_right(str, delimiters, delimiter_whole_use);
 }
 
 std::string MOONG::StringTool::format(const std::string format, ...)

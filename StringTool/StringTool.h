@@ -30,12 +30,12 @@ namespace MOONG
 		static const std::string& cut_right(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
 		static const std::string cut_right_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
 
-		static const std::string TailPop(std::string& str, const char delimiter);
-		static const std::string TailPop_keep_origin(std::string str, const char delimiter);
-		static const std::string TailPop(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
-		static const std::string TailPop_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
-		// TDOO: HeadCut 기능 추가.
-		// TODO: HeadPop 기능 추가.
+		static const std::string pop_right(std::string& str, const char delimiter);
+		static const std::string pop_right_keep_origin(std::string str, const char delimiter);
+		static const std::string pop_right(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
+		static const std::string pop_right_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
+		// TDOO: cut_left 기능 추가.
+		// TODO: pop_left 기능 추가.
 
 		static std::string format(const std::string format, ...);
 
