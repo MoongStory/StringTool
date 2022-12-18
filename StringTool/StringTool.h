@@ -43,7 +43,10 @@ namespace MOONG
 		static const std::string& cut_left(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
 		static const std::string cut_left_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
 
-		// TODO: pop_left 기능 추가.
+		static const std::string pop_left(std::string& str, const char delimiter);
+		static const std::string pop_left_keep_origin(std::string str, const char delimiter);
+		static const std::string pop_left(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
+		static const std::string pop_left_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
 
 		static std::string format(const std::string format, ...);
 

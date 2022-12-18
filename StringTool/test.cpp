@@ -21,7 +21,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << std::endl;
 
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "C:\\Program Files (x86)\\Microsoft Visual Studio" << std::endl;
 	for (size_t i = 0; i < temp_string.length(); i++)
 	{
@@ -105,7 +105,7 @@ int main()
 	std::cout << std::endl;
 	std::cout << std::endl;
 
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
 	std::cout << "pop_right 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
@@ -133,7 +133,7 @@ int main()
 	std::cout << std::endl;
 
 	delimiters = "Studio";
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
 	std::cout << "pop_right 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::pop_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
@@ -155,7 +155,7 @@ int main()
 	std::cout << std::endl;
 
 	delimiter = 'o';
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
 	std::cout << "pop_right 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
@@ -163,7 +163,7 @@ int main()
 	std::cout << std::endl;
 
 	delimiter = '\\';
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
 	std::cout << "pop_right 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
@@ -171,7 +171,7 @@ int main()
 	std::cout << std::endl;
 
 	delimiter = 'C';
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
 	std::cout << "pop_right 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
 	std::cout << "pop_right[" << temp_string << "]" << std::endl;
@@ -181,7 +181,7 @@ int main()
 	std::cout << std::endl;
 
 	delimiters = "Visual";
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
 	std::cout << "pop_right_keep_origin 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
 	std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
@@ -195,7 +195,7 @@ int main()
 	std::cout << std::endl;
 
 	delimiter = '\\';
-	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
 	std::cout << "pop_right_keep_origin 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
 	std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
@@ -249,6 +249,105 @@ int main()
 	std::cout << "cut_left[" << temp_string << "]" << std::endl;
 	std::cout << "cut_left 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	std::cout << "cut_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	delimiters = "Studio";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	delimiter = 'o';
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	delimiter = '\\';
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	delimiter = 'C';
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
+	std::cout << "pop_left[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	delimiters = "Visual";
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left_keep_origin 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left_keep_origin 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	delimiter = '\\';
+	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
+	std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "pop_left_keep_origin 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
+	std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << std::endl;

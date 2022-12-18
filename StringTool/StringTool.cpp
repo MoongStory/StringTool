@@ -177,26 +177,26 @@ const std::string MOONG::StringTool::pop_right(std::string& str, const std::stri
 {
 	std::string tail = "";
 
-	size_t index_right_most = MOONG::StringTool::find_index_rightmost(str, delimiters, delimiter_whole_use);
+	size_t index_rightmost = MOONG::StringTool::find_index_rightmost(str, delimiters, delimiter_whole_use);
 
-	if (index_right_most != std::string::npos)
+	if (index_rightmost != std::string::npos)
 	{
 		if (delimiter_whole_use == true)
 		{
-			if (index_right_most + delimiters.length() < str.length())
+			if (index_rightmost + delimiters.length() < str.length())
 			{
-				tail = str.substr(index_right_most + delimiters.length(), str.length() - index_right_most + delimiters.length());
+				tail = str.substr(index_rightmost + delimiters.length(), str.length() - index_rightmost + delimiters.length());
 			}
 		}
 		else
 		{
-			if (index_right_most + 1 < str.length())
+			if (index_rightmost + 1 < str.length())
 			{
-				tail = str.substr(index_right_most + 1, str.length() - index_right_most + 1);
+				tail = str.substr(index_rightmost + 1, str.length() - index_rightmost + 1);
 			}
 		}
 
-		str.erase(index_right_most, str.length() - index_right_most);
+		str.erase(index_rightmost, str.length() - index_rightmost);
 	}
 
 	return tail;
@@ -245,6 +245,50 @@ const std::string& MOONG::StringTool::cut_left(std::string& str, const std::stri
 const std::string MOONG::StringTool::cut_left_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use)
 {
 	return MOONG::StringTool::cut_left(str, delimiters, delimiter_whole_use);
+}
+
+const std::string MOONG::StringTool::pop_left(std::string& str, const char delimiter)
+{
+	std::string delimiters;
+	delimiters.push_back(delimiter);
+
+	return MOONG::StringTool::pop_left(str, delimiters);
+}
+
+const std::string MOONG::StringTool::pop_left_keep_origin(std::string str, const char delimiter)
+{
+	std::string delimiters;
+	delimiters.push_back(delimiter);
+
+	return MOONG::StringTool::pop_left(str, delimiters);
+}
+
+const std::string MOONG::StringTool::pop_left(std::string& str, const std::string delimiters, const bool delimiter_whole_use)
+{
+	std::string head = "";
+
+	size_t index_leftmost = MOONG::StringTool::find_index_leftmost(str, delimiters, delimiter_whole_use);
+
+	if (index_leftmost != std::string::npos)
+	{
+		head = str.substr(0, index_leftmost);
+
+		if (delimiter_whole_use == true)
+		{
+			str.erase(0, index_leftmost + delimiters.length());
+		}
+		else
+		{
+			str.erase(0, index_leftmost + 1);
+		}
+	}
+
+	return head;
+}
+
+const std::string MOONG::StringTool::pop_left_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use)
+{
+	return MOONG::StringTool::pop_left(str, delimiters, delimiter_whole_use);
 }
 
 std::string MOONG::StringTool::format(const std::string format, ...)
