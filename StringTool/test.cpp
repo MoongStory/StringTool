@@ -48,44 +48,44 @@ int main()
 	std::cout << std::endl;
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
-	std::cout << "TailCut[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::TailCut(temp_string, delimiter).c_str() << "]" << std::endl;
-	std::cout << "TailCut[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::cut_right(temp_string, delimiter).c_str() << "]" << std::endl;
+	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
-	std::cout << "TailCut_keep_origin[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut_keep_origin 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::TailCut_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
-	std::cout << "TailCut_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right_keep_origin 구분자[" << delimiter << "] 사용\n\t결과[" << MOONG::StringTool::cut_right_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
+	std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
 	delimiters = "Microsoft";
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
-	std::cout << "TailCut[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::TailCut(temp_string, delimiters).c_str() << "]" << std::endl;
-	std::cout << "TailCut[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::cut_right(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
-	std::cout << "TailCut_keep_origin[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut_keep_origin 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::TailCut_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
-	std::cout << "TailCut_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right_keep_origin 구분자[" << delimiters << "] 사용\n\t결과[" << MOONG::StringTool::cut_right_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
+	std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
 	temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio";
-	std::cout << "TailCut[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::TailCut(temp_string, delimiters, true).c_str() << "]" << std::endl;
-	std::cout << "TailCut[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::cut_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 
-	std::cout << "TailCut[" << temp_string << "]" << std::endl;
-	std::cout << "TailCut 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::TailCut(temp_string, delimiters, true).c_str() << "]" << std::endl;
-	std::cout << "TailCut[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right[" << temp_string << "]" << std::endl;
+	std::cout << "cut_right 구분자[" << delimiters << "] 전체를 하나의 구분자로 사용\n\t결과[" << MOONG::StringTool::cut_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << std::endl;

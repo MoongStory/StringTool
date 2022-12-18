@@ -74,23 +74,23 @@ const size_t MOONG::StringTool::FindIndexRightmost(const std::string str, const 
 	return index_rightmost;
 }
 
-const std::string& MOONG::StringTool::TailCut(std::string& str, const char delimiter)
+const std::string& MOONG::StringTool::cut_right(std::string& str, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::TailCut(str, delimiters);
+	return MOONG::StringTool::cut_right(str, delimiters);
 }
 
-const std::string  MOONG::StringTool::TailCut_keep_origin(std::string str, const char delimiter)
+const std::string  MOONG::StringTool::cut_right_keep_origin(std::string str, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::TailCut(str, delimiters);
+	return MOONG::StringTool::cut_right(str, delimiters);
 }
 
-const std::string& MOONG::StringTool::TailCut(std::string& str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::string& MOONG::StringTool::cut_right(std::string& str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
 	size_t index_right_most = MOONG::StringTool::FindIndexRightmost(str, delimiters, delimiter_whole_use);
 
@@ -102,9 +102,9 @@ const std::string& MOONG::StringTool::TailCut(std::string& str, const std::strin
 	return str;
 }
 
-const std::string MOONG::StringTool::TailCut_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::string MOONG::StringTool::cut_right_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
-	return MOONG::StringTool::TailCut(str, delimiters, delimiter_whole_use);
+	return MOONG::StringTool::cut_right(str, delimiters, delimiter_whole_use);
 }
 
 const std::string MOONG::StringTool::TailPop(std::string& str, const char delimiter)

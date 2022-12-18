@@ -25,10 +25,10 @@ namespace MOONG
 		static const size_t FindIndexRightmost(const std::string str, const char delimiter);
 		static const size_t FindIndexRightmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
 
-		static const std::string& TailCut(std::string& str, const char delimiter);
-		static const std::string TailCut_keep_origin(std::string str, const char delimiter);
-		static const std::string& TailCut(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
-		static const std::string TailCut_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
+		static const std::string& cut_right(std::string& str, const char delimiter);
+		static const std::string cut_right_keep_origin(std::string str, const char delimiter);
+		static const std::string& cut_right(std::string& str, const std::string delimiters, const bool delimiter_whole_use = false);
+		static const std::string cut_right_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
 
 		static const std::string TailPop(std::string& str, const char delimiter);
 		static const std::string TailPop_keep_origin(std::string str, const char delimiter);
