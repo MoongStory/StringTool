@@ -54,17 +54,9 @@ namespace MOONG
 		static std::string tolower_keep_origin(std::string str);
 		static std::string toupper_keep_origin(std::string str);
 
-//#pragma region C++ 언어 표준 C++17 미만
 		static std::string& trim_left(std::string& str);
 		static std::string& trim_right(std::string& str);
 		static std::string& trim(std::string& str);
-//#pragma endregion C++ 언어 표준 C++17 미만
-
-//#pragma region C++ 언어 표준 C++17 이상
-		//static std::string& trim_left(std::string& str);
-		//static std::string& trim_right(std::string& str);
-		//static std::string& trim(std::string& str);
-//#pragma endregion C++ 언어 표준 C++17 이상
 
 		static std::string trim_left_keep_origin(std::string str);
 		static std::string trim_right_keep_origin(std::string str);

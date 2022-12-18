@@ -302,7 +302,6 @@ std::string MOONG::StringTool::toupper_keep_origin(std::string str)
 	return MOONG::StringTool::toupper(str);
 }
 
-//#pragma region C++ 언어 표준 C++17 미만
 // 앞에 있는 개행 문자 제거
 std::string& MOONG::StringTool::trim_left(std::string& str)
 {
@@ -356,39 +355,6 @@ std::string& MOONG::StringTool::trim(std::string& str)
 {
 	return trim_left(trim_right(str));
 }
-//#pragma endregion C++ 언어 표준 C++17 미만
-
-
-
-//#pragma region C++ 언어 표준 C++17 이상
-//// trim from start (in place)
-//std::string& MOONG::StringTool::trim_left(std::string& str)
-//{
-//	str.erase(str.begin(), std::find_if(str.begin(), str.end(), [](unsigned char ch) {
-//		return !std::isspace(ch);
-//		}));
-//
-//	return str;
-//}
-//// trim from end (in place)
-//std::string& MOONG::StringTool::trim_right(std::string& str)
-//{
-//	str.erase(std::find_if(str.rbegin(), str.rend(), [](unsigned char ch) {
-//		return !std::isspace(ch);
-//		}).base(), str.end());
-//
-//	return str;
-//}
-//// trim from both ends (in place)
-//std::string& MOONG::StringTool::trim(std::string& str)
-//{
-//	return ltrim(rtrim(str));
-//}
-//#pragma endregion C++ 언어 표준 C++17 이상
-
-
-
-
 
 // trim from start (copying)
 std::string MOONG::StringTool::trim_left_keep_origin(std::string str)
