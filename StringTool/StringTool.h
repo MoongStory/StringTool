@@ -23,6 +23,10 @@ namespace MOONG
 		static const int compare(const std::string string1, const std::string string2, const bool ignoreCase = false);
 
 		static const std::string CutTail(std::string str, const char delimiter);
+		// TODO: static const std::string CutTail(std::string str, const std::string delimiters, const bool delimiter_whole_use = false); 기능 추가
+		// TODO: PopTail 기능 추가.
+		// TDOO: CutHead 기능 추가.
+		// TODO: PopHead 기능 추가.
 
 		static std::string format(const std::string format, ...);
 
