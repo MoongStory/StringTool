@@ -24,23 +24,23 @@ const int MOONG::StringTool::compare(const std::string string1, const std::strin
 	}
 }
 
-const std::string& MOONG::StringTool::CutTail(std::string& str, const char delimiter)
+const std::string& MOONG::StringTool::TailCut(std::string& str, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::CutTail(str, delimiters);
+	return MOONG::StringTool::TailCut(str, delimiters);
 }
 
-const std::string  MOONG::StringTool::CutTail_keep_origin(std::string str, const char delimiter)
+const std::string  MOONG::StringTool::TailCut_keep_origin(std::string str, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::CutTail(str, delimiters);
+	return MOONG::StringTool::TailCut(str, delimiters);
 }
 
-const std::string& MOONG::StringTool::CutTail(std::string& str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::string& MOONG::StringTool::TailCut(std::string& str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
 	size_t index_right_most = 0;
 
@@ -73,9 +73,9 @@ const std::string& MOONG::StringTool::CutTail(std::string& str, const std::strin
 	return str;
 }
 
-const std::string MOONG::StringTool::CutTail_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::string MOONG::StringTool::TailCut_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
-	return MOONG::StringTool::CutTail(str, delimiters, delimiter_whole_use);
+	return MOONG::StringTool::TailCut(str, delimiters, delimiter_whole_use);
 }
 
 std::string MOONG::StringTool::format(const std::string format, ...)
