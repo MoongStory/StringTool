@@ -22,6 +22,9 @@ namespace MOONG
 	public:
 		static const int compare(const std::string string1, const std::string string2, const bool ignoreCase = false);
 
+		static const std::string encodeBase64(const std::string& str);
+		static const std::string decodeBase64(const std::string& str);
+
 		static const size_t find_index_rightmost(const std::string str, const char delimiter);
 		static const size_t find_index_rightmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
 
