@@ -507,8 +507,9 @@ int main()
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 
-	std::string test_string = "한글 테스트";
-	std::cout << "encodeBase64\n\t[" << MOONG::StringTool::encodeBase64(MOONG::ConvertDataType::string_to_utf8(test_string)).c_str() << "]" << std::endl;
+	std::string test_string = "한글 English";
+	std::cout << "encode_base64\n\t[" << MOONG::StringTool::encode_base64(MOONG::ConvertDataType::string_to_utf8(test_string)).c_str() << "]" << std::endl;
+	std::cout << "encode_base64_url\n\t[" << MOONG::StringTool::encode_base64_url(MOONG::ConvertDataType::string_to_utf8(test_string)).c_str() << "]" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << std::endl;

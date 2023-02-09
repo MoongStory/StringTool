@@ -25,53 +25,19 @@ const int MOONG::StringTool::compare(const std::string string1, const std::strin
 	}
 }
 
-const std::string MOONG::StringTool::encodeBase64(const std::string& str)
+const std::string MOONG::StringTool::encode_base64(const std::string& str)
 {
-	std::string BASE64_INDEX_TABLE;
-	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	BASE64_INDEX_TABLE += "abcdefghijklmnopqrstuvwxyz";
-	BASE64_INDEX_TABLE += "0123456789";
-	BASE64_INDEX_TABLE += "+/";
-
-	std::string encoded_str;
-
-	for (size_t i = 0; i < str.length(); i += 3)
-	{
-		if ((i + 2) < str.length())
-		{
-			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i + 1) & 0xF) << 2) | ((str.at(i + 2) >> 6) & 0x3));
-			encoded_str += BASE64_INDEX_TABLE.at(str.at(i + 2) & 0x3F);
-		}
-		else if ((i + 1) < str.length())
-		{
-			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
-			encoded_str += BASE64_INDEX_TABLE.at(((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i + 1) & 0xF)) << 2));
-
-			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
-
-			break;
-		}
-		else
-		{
-			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
-			encoded_str += BASE64_INDEX_TABLE.at(((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i) & 0x3)) << 4));
-
-			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
-			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
-
-			break;
-		}
-	}
-
-	return encoded_str;
+	return _encode_base64(str);
 }
 
-const std::string MOONG::StringTool::decodeBase64(const std::string& str)
+const std::string MOONG::StringTool::decode_base64(const std::string& str)
 {
 	return std::string();
+}
+
+const std::string MOONG::StringTool::encode_base64_url(const std::string& str)
+{
+	return _encode_base64(str, true);
 }
 
 const size_t MOONG::StringTool::find_index_rightmost(const std::string str, const char delimiter)
@@ -554,4 +520,55 @@ std::string MOONG::StringTool::trim_right_keep_origin(std::string str)
 std::string MOONG::StringTool::trim_keep_origin(std::string str)
 {
 	return MOONG::StringTool::trim(str);
+}
+
+const std::string MOONG::StringTool::_encode_base64(const std::string& str, const bool use_url_encoding_characters/* = false*/)
+{
+	std::string BASE64_INDEX_TABLE;
+	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	BASE64_INDEX_TABLE += "abcdefghijklmnopqrstuvwxyz";
+	BASE64_INDEX_TABLE += "0123456789";
+	if (true == use_url_encoding_characters)
+	{
+		BASE64_INDEX_TABLE += "-_";
+	}
+	else
+	{
+		BASE64_INDEX_TABLE += "+/";
+	}
+
+	std::string encoded_str;
+
+	for (size_t i = 0; i < str.length(); i += 3)
+	{
+		if ((i + 2) < str.length())
+		{
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
+			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i + 1) & 0xF) << 2) | ((str.at(i + 2) >> 6) & 0x3));
+			encoded_str += BASE64_INDEX_TABLE.at(str.at(i + 2) & 0x3F);
+		}
+		else if ((i + 1) < str.length())
+		{
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
+			encoded_str += BASE64_INDEX_TABLE.at(((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i + 1) & 0xF)) << 2));
+
+			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
+
+			break;
+		}
+		else
+		{
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at(((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i) & 0x3)) << 4));
+
+			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
+			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
+
+			break;
+		}
+	}
+
+	return encoded_str;
 }
