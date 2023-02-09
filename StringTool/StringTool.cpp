@@ -7,6 +7,7 @@
 #include <strsafe.h>
 
 const unsigned int MOONG::StringTool::max_buf_size_ = 2048;
+const char MOONG::StringTool::BASE64_PADDING_CHAR = '=';
 
 #ifndef INT32_MAX
 #define INT32_MAX 2147483647 
@@ -26,18 +27,11 @@ const int MOONG::StringTool::compare(const std::string string1, const std::strin
 
 const std::string MOONG::StringTool::encodeBase64(const std::string& str)
 {
-	const char BASE64_INDEX_TABLE[] = {
-		'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-		'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-		'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
-		'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f',
-		'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-		'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
-		'w', 'x', 'y', 'z', '0', '1', '2', '3',
-		'4', '5', '6', '7', '8', '9', '+', '/',
-	};
-
-	const char PADDING_CHAR = '=';
+	std::string BASE64_INDEX_TABLE;
+	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	BASE64_INDEX_TABLE += "abcdefghijklmnopqrstuvwxyz";
+	BASE64_INDEX_TABLE += "0123456789";
+	BASE64_INDEX_TABLE += "+/";
 
 	std::string encoded_str;
 
@@ -45,28 +39,28 @@ const std::string MOONG::StringTool::encodeBase64(const std::string& str)
 	{
 		if ((i + 2) < str.length())
 		{
-			encoded_str += BASE64_INDEX_TABLE[(str.at(i) >> 2) & 0x3F];
-			encoded_str += BASE64_INDEX_TABLE[((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF)];
-			encoded_str += BASE64_INDEX_TABLE[((str.at(i + 1) & 0xF) << 2) | ((str.at(i + 2) >> 6) & 0x3)];
-			encoded_str += BASE64_INDEX_TABLE[str.at(i + 2) & 0x3F];
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
+			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i + 1) & 0xF) << 2) | ((str.at(i + 2) >> 6) & 0x3));
+			encoded_str += BASE64_INDEX_TABLE.at(str.at(i + 2) & 0x3F);
 		}
 		else if ((i + 1) < str.length())
 		{
-			encoded_str += BASE64_INDEX_TABLE[(str.at(i) >> 2) & 0x3F];
-			encoded_str += BASE64_INDEX_TABLE[((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF)];
-			encoded_str += BASE64_INDEX_TABLE[((str.at(i + 1) & 0xF) << 2)];
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
+			encoded_str += BASE64_INDEX_TABLE.at(((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i + 1) & 0xF)) << 2));
 
-			encoded_str += PADDING_CHAR;
+			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
 
 			break;
 		}
 		else
 		{
-			encoded_str += BASE64_INDEX_TABLE[(str.at(i) >> 2) & 0x3F];
-			encoded_str += BASE64_INDEX_TABLE[((str.at(i) & 0x3) << 4)];
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at(((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i) & 0x3)) << 4));
 
-			encoded_str += PADDING_CHAR;
-			encoded_str += PADDING_CHAR;
+			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
+			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
 
 			break;
 		}

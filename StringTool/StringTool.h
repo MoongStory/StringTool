@@ -18,6 +18,7 @@ namespace MOONG
 	protected:
 	private:
 		static const unsigned int max_buf_size_;
+		static const char BASE64_PADDING_CHAR;
 
 	public:
 		static const int compare(const std::string string1, const std::string string2, const bool ignoreCase = false);
