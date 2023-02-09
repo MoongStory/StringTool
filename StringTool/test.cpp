@@ -1,4 +1,4 @@
-#include "StringTool.h"
+ï»¿#include "StringTool.h"
 
 #include "../../ConvertDataType/ConvertDataType/ConvertDataType.h"
 
@@ -35,28 +35,28 @@ int main()
 
 	//delimiter = '\\';
 	//delimiters = "Visual";
-	//std::cout << "find_index_rightmost ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\tÀÎµ¦½º[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiter) << "]" << std::endl;
-	//std::cout << "find_index_rightmost ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\tÀÎµ¦½º[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiters) << "]" << std::endl;
-	//std::cout << "find_index_rightmost ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\tÀÎµ¦½º[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiters, true) << "]" << std::endl;
+	//std::cout << "find_index_rightmost êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tì¸ë±ìŠ¤[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiter) << "]" << std::endl;
+	//std::cout << "find_index_rightmost êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tì¸ë±ìŠ¤[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiters) << "]" << std::endl;
+	//std::cout << "find_index_rightmost êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tì¸ë±ìŠ¤[" << MOONG::StringTool::find_index_rightmost(temp_string, delimiters, true) << "]" << std::endl;
 
 	//delimiters = "VisualA";
 	//if (MOONG::StringTool::find_index_rightmost(temp_string, delimiters, true) == std::string::npos)
 	//{
-	//	std::cout << "find_index_rightmost ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t[¸øÃ£À½]" << std::endl;
+	//	std::cout << "find_index_rightmost êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\t[ëª»ì°¾ìŒ]" << std::endl;
 	//}
 
 	//std::cout << std::endl;
 
 	//delimiter = '\\';
 	//delimiters = "Visual";
-	//std::cout << "find_index_leftmost ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\tÀÎµ¦½º[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiter) << "]" << std::endl;
-	//std::cout << "find_index_leftmost ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\tÀÎµ¦½º[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiters) << "]" << std::endl;
-	//std::cout << "find_index_leftmost ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\tÀÎµ¦½º[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiters, true) << "]" << std::endl;
+	//std::cout << "find_index_leftmost êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tì¸ë±ìŠ¤[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiter) << "]" << std::endl;
+	//std::cout << "find_index_leftmost êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tì¸ë±ìŠ¤[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiters) << "]" << std::endl;
+	//std::cout << "find_index_leftmost êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tì¸ë±ìŠ¤[" << MOONG::StringTool::find_index_leftmost(temp_string, delimiters, true) << "]" << std::endl;
 
 	//delimiters = "VisualA";
 	//if (MOONG::StringTool::find_index_leftmost(temp_string, delimiters, true) == std::string::npos)
 	//{
-	//	std::cout << "find_index_leftmost ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t[¸øÃ£À½]" << std::endl;
+	//	std::cout << "find_index_leftmost êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\t[ëª»ì°¾ìŒ]" << std::endl;
 	//}
 
 	//std::cout << std::endl;
@@ -65,14 +65,14 @@ int main()
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_right[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_right ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_right(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "cut_right êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_right(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_right_keep_origin ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_right_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "cut_right_keep_origin êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_right_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -80,27 +80,27 @@ int main()
 	//delimiters = "Microsoft";
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_right[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_right ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_right(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "cut_right êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_right(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_right_keep_origin ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_right_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "cut_right_keep_origin êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_right_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "cut_right_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_right[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_right ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "cut_right êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "cut_right[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_right ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "cut_right êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "cut_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -109,25 +109,25 @@ int main()
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -137,19 +137,19 @@ int main()
 	//delimiters = "Studio";
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -159,7 +159,7 @@ int main()
 	//delimiter = 'o';
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -167,7 +167,7 @@ int main()
 	//delimiter = '\\';
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -175,7 +175,7 @@ int main()
 	//delimiter = 'C';
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "pop_right êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "pop_right[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -185,13 +185,13 @@ int main()
 	//delimiters = "Visual";
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right_keep_origin ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_right_keep_origin êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right_keep_origin ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "pop_right_keep_origin êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -199,7 +199,7 @@ int main()
 	//delimiter = '\\';
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_right_keep_origin ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "pop_right_keep_origin êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_right_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "pop_right_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -208,14 +208,14 @@ int main()
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_left ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_left(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "cut_left êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_left(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_left_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_left_keep_origin ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_left_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "cut_left_keep_origin êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_left_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "cut_left_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -223,33 +223,33 @@ int main()
 	//delimiters = "Microsoft";
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_left ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "cut_left êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_left(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_left_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_left_keep_origin ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_left_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "cut_left_keep_origin êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_left_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "cut_left_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_left ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "cut_left êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_left ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "cut_left êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
-	//std::cout << "cut_left ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "cut_left êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::cut_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "cut_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -258,25 +258,25 @@ int main()
 
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -286,19 +286,19 @@ int main()
 	//delimiters = "Studio";
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -308,7 +308,7 @@ int main()
 	//delimiter = 'o';
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -316,7 +316,7 @@ int main()
 	//delimiter = '\\';
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -324,7 +324,7 @@ int main()
 	//delimiter = 'C';
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "pop_left êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "pop_left[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -334,13 +334,13 @@ int main()
 	//delimiters = "Visual";
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left_keep_origin ±¸ºÐÀÚ[" << delimiters << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
+	//std::cout << "pop_left_keep_origin êµ¬ë¶„ìž[" << delimiters << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiters).c_str() << "]" << std::endl;
 	//std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 
 	//std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left_keep_origin ±¸ºÐÀÚ[" << delimiters << "] ÀüÃ¼¸¦ ÇÏ³ªÀÇ ±¸ºÐÀÚ·Î »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiters, true).c_str() << "]" << std::endl;
+	//std::cout << "pop_left_keep_origin êµ¬ë¶„ìž[" << delimiters << "] ì „ì²´ë¥¼ í•˜ë‚˜ì˜ êµ¬ë¶„ìžë¡œ ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiters, true).c_str() << "]" << std::endl;
 	//std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -348,14 +348,14 @@ int main()
 	//delimiter = '\\';
 	//temp_string = "C:\\Program Files (x86)\\Microsoft Visual Studio\\Microsoft Visual Studio";
 	//std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
-	//std::cout << "pop_left_keep_origin ±¸ºÐÀÚ[" << delimiter << "] »ç¿ë\n\t°á°ú[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
+	//std::cout << "pop_left_keep_origin êµ¬ë¶„ìž[" << delimiter << "] ì‚¬ìš©\n\tê²°ê³¼[" << MOONG::StringTool::pop_left_keep_origin(temp_string, delimiter).c_str() << "]" << std::endl;
 	//std::cout << "pop_left_keep_origin[" << temp_string << "]" << std::endl;
 
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 
-	//std::cout << "format\n\t[" << MOONG::StringTool::format("%d, %.2lf, %s, %4c", 3, 3.2345, "string ¹®ÀÚ¿­", 'A').c_str() << "]" << std::endl;
+	//std::cout << "format\n\t[" << MOONG::StringTool::format("%d, %.2lf, %s, %4c", 3, 3.2345, "string ë¬¸ìžì—´", 'A').c_str() << "]" << std::endl;
 
 	//std::cout << std::endl;
 	//std::cout << std::endl;
@@ -364,7 +364,7 @@ int main()
 	//std::string remove_target_string = "cd";
 	//temp_string = "abcd abcd";
 	//std::cout << "temp_string [" << temp_string.c_str() << "]" << std::endl;
-	//std::cout << "remove, remove_target_string[" << remove_target_string << "]\n\t°á°ú[" << MOONG::StringTool::remove(temp_string, remove_target_string).c_str() << "]" << std::endl;
+	//std::cout << "remove, remove_target_string[" << remove_target_string << "]\n\tê²°ê³¼[" << MOONG::StringTool::remove(temp_string, remove_target_string).c_str() << "]" << std::endl;
 	//std::cout << "temp_string [" << temp_string.c_str() << "]" << std::endl;
 
 	//std::cout << std::endl;
@@ -500,16 +500,42 @@ int main()
 
 	//temp_string = "";
 	//std::cout << "temp_string[" << temp_string.c_str() << "]" << std::endl;
-	//std::cout << "trim. ºó ¹®ÀÚ¿­ÀÏ °æ¿ì ¿À·ù ¹ß»ý ¿©ºÎ È®ÀÎ\n\t[" << MOONG::StringTool::trim_keep_origin(temp_string).c_str() << "]" << std::endl;
+	//std::cout << "trim. ë¹ˆ ë¬¸ìžì—´ì¼ ê²½ìš° ì˜¤ë¥˜ ë°œìƒ ì—¬ë¶€ í™•ì¸\n\t[" << MOONG::StringTool::trim_keep_origin(temp_string).c_str() << "]" << std::endl;
 	//std::cout << "temp_string[" << temp_string.c_str() << "]" << std::endl;
 
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 
-	std::string test_string = "ÇÑ±Û English";
-	std::cout << "encode_base64\n\t[" << MOONG::StringTool::encode_base64(MOONG::ConvertDataType::string_to_utf8(test_string)).c_str() << "]" << std::endl;
-	std::cout << "encode_base64_url\n\t[" << MOONG::StringTool::encode_base64_url(MOONG::ConvertDataType::string_to_utf8(test_string)).c_str() << "]" << std::endl;
+	// https://en.wikipedia.org/wiki/Base64
+	std::string test_string = "Base64ì™€ Base64Urlì€ 62ë²ˆì§¸ì™€ 63ë²ˆì§¸ Encoding charactersê°€ ë‹¤ë¦…ë‹ˆë‹¤. Base64ëŠ” \"+/\", Base64UrlëŠ” \"-_\"ë¡œ ì´ë£¨ì–´ì ¸ ìžˆìŠµë‹ˆë‹¤.";
+	std::string encoded_base64 = MOONG::StringTool::encode_base64(MOONG::ConvertDataType::string_to_utf8(test_string));
+	std::string encoded_base64_url = MOONG::StringTool::encode_base64_url(MOONG::ConvertDataType::string_to_utf8(test_string));
+	std::cout << "encode_base64\n\t[" << encoded_base64.c_str() << "]" << std::endl;
+	std::cout << "encode_base64_url\n\t[" << encoded_base64_url.c_str() << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "decode_base64\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
+	std::cout << "decode_base64_url\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "decode_base64 (encode_base64_urlë¡œ ì¸ì½”ë”© ëœ ë¬¸ìžì—´ ë„˜ê¸´ ê²½ìš°)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64_url)).c_str() << "]" << std::endl;
+	std::cout << "decode_base64_url (encode_base64ë¡œ ì¸ì½”ë”© ëœ ë¬¸ìžì—´ ë„˜ê¸´ ê²½ìš°)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64)).c_str() << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	std::cout << "decode_base64\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
+	std::cout << "decode_base64_url\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
+
+	std::cout << std::endl;
+
+	encoded_base64 += '*';
+	encoded_base64_url += '*';
+
+	std::cout << "decode_base64 (Base64 ìƒ‰ì¸í‘œì— ì—†ëŠ” ë¬¸ìž ì¶”ê°€í•˜ì—¬ í…ŒìŠ¤íŠ¸)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
+	std::cout << "decode_base64_url (Base64 ìƒ‰ì¸í‘œì— ì—†ëŠ” ë¬¸ìž ì¶”ê°€í•˜ì—¬ í…ŒìŠ¤íŠ¸)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
 
 	std::cout << std::endl;
 	std::cout << std::endl;

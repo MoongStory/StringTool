@@ -27,6 +27,7 @@ namespace MOONG
 		static const std::string decode_base64(const std::string& str);
 
 		static const std::string encode_base64_url(const std::string& str);
+		static const std::string decode_base64_url(const std::string& str);
 
 		static const size_t find_index_rightmost(const std::string str, const char delimiter);
 		static const size_t find_index_rightmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use = false);
@@ -56,6 +57,7 @@ namespace MOONG
 
 		static std::string format(const std::string format, ...);
 
+		static std::string& remove(std::string& str, const char remove_char);
 		static std::string& remove(std::string& str, const std::string remove_string);
 		static std::string remove_keep_origin(std::string str, const std::string remove_string);
 
@@ -80,7 +82,9 @@ namespace MOONG
 		static std::string trim_keep_origin(std::string str);
 	protected:
 	private:
+		// https://en.wikipedia.org/wiki/Base64
 		static const std::string _encode_base64(const std::string& str, const bool use_url_encoding_characters = false);
+		static const std::string _decode_base64(const std::string& str, const bool use_url_encoding_characters = false);
 	};
 }
 #endif	// _STRING_TOOL_H_

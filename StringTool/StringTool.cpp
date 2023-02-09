@@ -32,12 +32,17 @@ const std::string MOONG::StringTool::encode_base64(const std::string& str)
 
 const std::string MOONG::StringTool::decode_base64(const std::string& str)
 {
-	return std::string();
+	return _decode_base64(str);
 }
 
 const std::string MOONG::StringTool::encode_base64_url(const std::string& str)
 {
 	return _encode_base64(str, true);
+}
+
+const std::string MOONG::StringTool::decode_base64_url(const std::string& str)
+{
+	return _decode_base64(str, true);
 }
 
 const size_t MOONG::StringTool::find_index_rightmost(const std::string str, const char delimiter)
@@ -322,6 +327,14 @@ std::string MOONG::StringTool::format(const std::string format, ...)
 	return std::string(build_string);
 }
 
+std::string& MOONG::StringTool::remove(std::string& str, const char remove_char)
+{
+	std::string remove_string;
+	remove_string = remove_char;
+
+	return MOONG::StringTool::remove(str, remove_string);
+}
+
 std::string& MOONG::StringTool::remove(std::string& str, const std::string remove_string)
 {
 	while (str.find(remove_string) != std::string::npos)
@@ -571,4 +584,90 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& str, cons
 	}
 
 	return encoded_str;
+}
+
+const std::string MOONG::StringTool::_decode_base64(const std::string& str, const bool use_url_encoding_characters/* = false*/)
+{
+	std::string BASE64_INDEX_TABLE;
+	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	BASE64_INDEX_TABLE += "abcdefghijklmnopqrstuvwxyz";
+	BASE64_INDEX_TABLE += "0123456789";
+	if (true == use_url_encoding_characters)
+	{
+		BASE64_INDEX_TABLE += "-_";
+	}
+	else
+	{
+		BASE64_INDEX_TABLE += "+/";
+	}
+
+	std::string encoded_str = str;
+	MOONG::StringTool::remove(encoded_str, MOONG::StringTool::BASE64_PADDING_CHAR);
+
+	// base64 인코딩 외의 문자가 있는경우.
+	for (size_t i = 0; i < encoded_str.length(); i++)
+	{
+		if (BASE64_INDEX_TABLE.find(encoded_str.at(i)) == std::string::npos)
+		{
+			return std::string("It contains characters other than the Base64 index table or need to check Base64 and Base64Url.");
+		}
+	}
+
+	std::string decoded_str;
+	char decoded_str_block[4] = { 0 };
+
+	for (size_t i = 0; i < encoded_str.length(); i += 4)
+	{
+		ZeroMemory(decoded_str_block, _countof(decoded_str_block));
+
+		if ((i + 3) < encoded_str.length())
+		{
+			decoded_str_block[0] |= BASE64_INDEX_TABLE.find(encoded_str.at(i)) << 2;
+			decoded_str_block[0] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 1)) >> 4;
+
+			decoded_str_block[1] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 1)) << 4;
+			decoded_str_block[1] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 2)) >> 2;
+
+			decoded_str_block[2] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 2)) << 6;
+			decoded_str_block[2] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 3));
+
+			decoded_str += decoded_str_block;
+		}
+		else if ((i + 2) < encoded_str.length())
+		{
+			decoded_str_block[0] |= BASE64_INDEX_TABLE.find(encoded_str.at(i)) << 2;
+			decoded_str_block[0] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 1)) >> 4;
+
+			decoded_str_block[1] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 1)) << 4;
+			decoded_str_block[1] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 2)) >> 2;
+
+			decoded_str_block[2] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 2)) << 6;
+
+			decoded_str += decoded_str_block;
+
+			break;
+		}
+		else if ((i + 1) < encoded_str.length())
+		{
+			decoded_str_block[0] |= BASE64_INDEX_TABLE.find(encoded_str.at(i)) << 2;
+			decoded_str_block[0] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 1)) >> 4;
+
+			decoded_str_block[1] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 1)) << 4;
+
+			decoded_str += decoded_str_block;
+
+			break;
+		}
+		else
+		{
+			decoded_str_block[0] |= BASE64_INDEX_TABLE.find(encoded_str.at(i)) << 2;
+			decoded_str_block[0] |= BASE64_INDEX_TABLE.find(encoded_str.at(i + 1)) >> 4;
+
+			decoded_str += decoded_str_block;
+
+			break;
+		}
+	}
+
+	return decoded_str;
 }
