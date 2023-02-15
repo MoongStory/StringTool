@@ -557,15 +557,19 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& str, cons
 		if ((i + 2) < str.length())
 		{
 			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i + 1) & 0xF) << 2) | ((str.at(i + 2) >> 6) & 0x3));
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF);
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i + 1) & 0xF) << 2) | ((str.at(i + 2) >> 6) & 0x3);
 			encoded_str += BASE64_INDEX_TABLE.at(str.at(i + 2) & 0x3F);
 		}
 		else if ((i + 1) < str.length())
 		{
 			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF);
+#if _MSC_VER > 1200
 			encoded_str += BASE64_INDEX_TABLE.at(((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i + 1) & 0xF)) << 2));
+#else
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i + 1) & 0xF) << 2);
+#endif
 
 			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
 
@@ -574,7 +578,11 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& str, cons
 		else
 		{
 			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
-			encoded_str += BASE64_INDEX_TABLE.at(((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i) & 0x3)) << 4));
+#if _MSC_VER > 1200
+			encoded_str += BASE64_INDEX_TABLE.at((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i) & 0x3)) << 4);
+#else
+			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) & 0x3) << 4);
+#endif
 
 			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
 			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
@@ -604,8 +612,9 @@ const std::string MOONG::StringTool::_decode_base64(const std::string& str, cons
 	std::string encoded_str = str;
 	MOONG::StringTool::remove(encoded_str, MOONG::StringTool::BASE64_PADDING_CHAR);
 
+	size_t i = 0;
 	// base64 인코딩 외의 문자가 있는경우.
-	for (size_t i = 0; i < encoded_str.length(); i++)
+	for (i = 0; i < encoded_str.length(); i++)
 	{
 		if (BASE64_INDEX_TABLE.find(encoded_str.at(i)) == std::string::npos)
 		{
@@ -616,7 +625,7 @@ const std::string MOONG::StringTool::_decode_base64(const std::string& str, cons
 	std::string decoded_str;
 	char decoded_str_block[4] = { 0 };
 
-	for (size_t i = 0; i < encoded_str.length(); i += 4)
+	for (i = 0; i < encoded_str.length(); i += 4)
 	{
 		ZeroMemory(decoded_str_block, _countof(decoded_str_block));
 
