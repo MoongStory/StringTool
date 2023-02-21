@@ -13,56 +13,56 @@ const char MOONG::StringTool::BASE64_PADDING_CHAR = '=';
 #define INT32_MAX 2147483647 
 #endif
 
-const int MOONG::StringTool::compare(const std::string string1, const std::string string2, const bool ignoreCase)
+const int MOONG::StringTool::compare(const std::string input1, const std::string iniput2, const bool ignoreCase)
 {
 	if (ignoreCase)
 	{
-		return _stricmp(string1.c_str(), string2.c_str());
+		return _stricmp(input1.c_str(), iniput2.c_str());
 	}
 	else
 	{
-		return string1.compare(string2);
+		return input1.compare(iniput2);
 	}
 }
 
-const std::string MOONG::StringTool::encode_base64(const std::string& str)
+const std::string MOONG::StringTool::encode_base64(const std::string& input)
 {
-	return _encode_base64(str);
+	return _encode_base64(input);
 }
 
-const std::string MOONG::StringTool::decode_base64(const std::string& str)
+const std::string MOONG::StringTool::decode_base64(const std::string& input)
 {
-	return _decode_base64(str);
+	return _decode_base64(input);
 }
 
-const std::string MOONG::StringTool::encode_base64_url(const std::string& str)
+const std::string MOONG::StringTool::encode_base64_url(const std::string& input)
 {
-	return _encode_base64(str, true);
+	return _encode_base64(input, true);
 }
 
-const std::string MOONG::StringTool::decode_base64_url(const std::string& str)
+const std::string MOONG::StringTool::decode_base64_url(const std::string& input)
 {
-	return _decode_base64(str, true);
+	return _decode_base64(input, true);
 }
 
-const size_t MOONG::StringTool::find_index_rightmost(const std::string str, const char delimiter)
+const size_t MOONG::StringTool::find_index_rightmost(const std::string input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::find_index_rightmost(str, delimiters);
+	return MOONG::StringTool::find_index_rightmost(input, delimiters);
 }
 
-const size_t MOONG::StringTool::find_index_rightmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const size_t MOONG::StringTool::find_index_rightmost(const std::string input, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
 	size_t index_rightmost = 0;
 	bool isFindDelimiter = false;
 
 	if (delimiter_whole_use == true)
 	{
-		if (str.rfind(delimiters) != std::string::npos)
+		if (input.rfind(delimiters) != std::string::npos)
 		{
-			index_rightmost = str.rfind(delimiters);
+			index_rightmost = input.rfind(delimiters);
 		}
 		else
 		{
@@ -75,13 +75,13 @@ const size_t MOONG::StringTool::find_index_rightmost(const std::string str, cons
 
 		for (size_t i = 0; i < delimiters.length(); i++)
 		{
-			if (str.rfind(delimiters[i]) != std::string::npos)
+			if (input.rfind(delimiters[i]) != std::string::npos)
 			{
 				isFindDelimiter = true;
 
-				if (str.rfind(delimiters[i]) > index_rightmost)
+				if (input.rfind(delimiters[i]) > index_rightmost)
 				{
-					index_rightmost = str.rfind(delimiters[i]);
+					index_rightmost = input.rfind(delimiters[i]);
 				}
 			}
 		}
@@ -95,24 +95,24 @@ const size_t MOONG::StringTool::find_index_rightmost(const std::string str, cons
 	return index_rightmost;
 }
 
-const size_t MOONG::StringTool::find_index_leftmost(const std::string str, const char delimiter)
+const size_t MOONG::StringTool::find_index_leftmost(const std::string input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::find_index_leftmost(str, delimiters);
+	return MOONG::StringTool::find_index_leftmost(input, delimiters);
 }
 
-const size_t MOONG::StringTool::find_index_leftmost(const std::string str, const std::string delimiters, const bool delimiter_whole_use)
+const size_t MOONG::StringTool::find_index_leftmost(const std::string input, const std::string delimiters, const bool delimiter_whole_use)
 {
-	size_t index_leftmost = str.length();
+	size_t index_leftmost = input.length();
 	bool isFindDelimiter = false;
 
 	if (delimiter_whole_use == true)
 	{
-		if (str.find(delimiters) != std::string::npos)
+		if (input.find(delimiters) != std::string::npos)
 		{
-			index_leftmost = str.find(delimiters);
+			index_leftmost = input.find(delimiters);
 		}
 		else
 		{
@@ -125,13 +125,13 @@ const size_t MOONG::StringTool::find_index_leftmost(const std::string str, const
 
 		for (size_t i = 0; i < delimiters.length(); i++)
 		{
-			if (str.find(delimiters[i]) != std::string::npos)
+			if (input.find(delimiters[i]) != std::string::npos)
 			{
 				isFindDelimiter = true;
 
-				if (str.find(delimiters[i]) < index_leftmost)
+				if (input.find(delimiters[i]) < index_leftmost)
 				{
-					index_leftmost = str.find(delimiters[i]);
+					index_leftmost = input.find(delimiters[i]);
 				}
 			}
 		}
@@ -145,171 +145,171 @@ const size_t MOONG::StringTool::find_index_leftmost(const std::string str, const
 	return index_leftmost;
 }
 
-const std::string& MOONG::StringTool::cut_right(std::string& str, const char delimiter)
+const std::string& MOONG::StringTool::cut_right(std::string& input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::cut_right(str, delimiters);
+	return MOONG::StringTool::cut_right(input, delimiters);
 }
 
-const std::string  MOONG::StringTool::cut_right_keep_origin(std::string str, const char delimiter)
+const std::string  MOONG::StringTool::cut_right_keep_origin(std::string input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::cut_right(str, delimiters);
+	return MOONG::StringTool::cut_right(input, delimiters);
 }
 
-const std::string& MOONG::StringTool::cut_right(std::string& str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::string& MOONG::StringTool::cut_right(std::string& input, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
-	size_t index_rightmost = MOONG::StringTool::find_index_rightmost(str, delimiters, delimiter_whole_use);
+	size_t index_rightmost = MOONG::StringTool::find_index_rightmost(input, delimiters, delimiter_whole_use);
 
 	if (index_rightmost != std::string::npos)
 	{
-		str.erase(index_rightmost, str.length() - index_rightmost);
+		input.erase(index_rightmost, input.length() - index_rightmost);
 	}
 
-	return str;
+	return input;
 }
 
-const std::string MOONG::StringTool::cut_right_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::string MOONG::StringTool::cut_right_keep_origin(std::string input, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
-	return MOONG::StringTool::cut_right(str, delimiters, delimiter_whole_use);
+	return MOONG::StringTool::cut_right(input, delimiters, delimiter_whole_use);
 }
 
-const std::string MOONG::StringTool::pop_right(std::string& str, const char delimiter)
-{
-	std::string delimiters;
-	delimiters.push_back(delimiter);
-
-	return MOONG::StringTool::pop_right(str, delimiters);
-}
-
-const std::string MOONG::StringTool::pop_right_keep_origin(std::string str, const char delimiter)
+const std::string MOONG::StringTool::pop_right(std::string& input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::pop_right(str, delimiters);
+	return MOONG::StringTool::pop_right(input, delimiters);
 }
 
-const std::string MOONG::StringTool::pop_right(std::string& str, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::pop_right_keep_origin(std::string input, const char delimiter)
+{
+	std::string delimiters;
+	delimiters.push_back(delimiter);
+
+	return MOONG::StringTool::pop_right(input, delimiters);
+}
+
+const std::string MOONG::StringTool::pop_right(std::string& input, const std::string delimiters, const bool delimiter_whole_use)
 {
 	std::string tail = "";
 
-	size_t index_rightmost = MOONG::StringTool::find_index_rightmost(str, delimiters, delimiter_whole_use);
+	size_t index_rightmost = MOONG::StringTool::find_index_rightmost(input, delimiters, delimiter_whole_use);
 
 	if (index_rightmost != std::string::npos)
 	{
 		if (delimiter_whole_use == true)
 		{
-			if (index_rightmost + delimiters.length() < str.length())
+			if (index_rightmost + delimiters.length() < input.length())
 			{
-				tail = str.substr(index_rightmost + delimiters.length(), str.length() - index_rightmost + delimiters.length());
+				tail = input.substr(index_rightmost + delimiters.length(), input.length() - index_rightmost + delimiters.length());
 			}
 		}
 		else
 		{
-			if (index_rightmost + 1 < str.length())
+			if (index_rightmost + 1 < input.length())
 			{
-				tail = str.substr(index_rightmost + 1, str.length() - index_rightmost + 1);
+				tail = input.substr(index_rightmost + 1, input.length() - index_rightmost + 1);
 			}
 		}
 
-		str.erase(index_rightmost, str.length() - index_rightmost);
+		input.erase(index_rightmost, input.length() - index_rightmost);
 	}
 
 	return tail;
 }
 
-const std::string MOONG::StringTool::pop_right_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::pop_right_keep_origin(std::string input, const std::string delimiters, const bool delimiter_whole_use)
 {
-	return MOONG::StringTool::pop_right(str, delimiters, delimiter_whole_use);
+	return MOONG::StringTool::pop_right(input, delimiters, delimiter_whole_use);
 }
 
-const std::string& MOONG::StringTool::cut_left(std::string& str, const char delimiter)
+const std::string& MOONG::StringTool::cut_left(std::string& input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::cut_left(str, delimiters);
+	return MOONG::StringTool::cut_left(input, delimiters);
 }
 
-const std::string MOONG::StringTool::cut_left_keep_origin(std::string str, const char delimiter)
+const std::string MOONG::StringTool::cut_left_keep_origin(std::string input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::cut_left(str, delimiters);
+	return MOONG::StringTool::cut_left(input, delimiters);
 }
 
-const std::string& MOONG::StringTool::cut_left(std::string& str, const std::string delimiters, const bool delimiter_whole_use)
+const std::string& MOONG::StringTool::cut_left(std::string& input, const std::string delimiters, const bool delimiter_whole_use)
 {
-	size_t index_leftmost = MOONG::StringTool::find_index_leftmost(str, delimiters, delimiter_whole_use);
+	size_t index_leftmost = MOONG::StringTool::find_index_leftmost(input, delimiters, delimiter_whole_use);
 
 	if (index_leftmost != std::string::npos)
 	{
 		if (delimiter_whole_use == true)
 		{
-			str.erase(0, index_leftmost + delimiters.length());
+			input.erase(0, index_leftmost + delimiters.length());
 		}
 		else
 		{
-			str.erase(0, index_leftmost + 1);
+			input.erase(0, index_leftmost + 1);
 		}
 	}
 
-	return str;
+	return input;
 }
 
-const std::string MOONG::StringTool::cut_left_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::cut_left_keep_origin(std::string input, const std::string delimiters, const bool delimiter_whole_use)
 {
-	return MOONG::StringTool::cut_left(str, delimiters, delimiter_whole_use);
+	return MOONG::StringTool::cut_left(input, delimiters, delimiter_whole_use);
 }
 
-const std::string MOONG::StringTool::pop_left(std::string& str, const char delimiter)
-{
-	std::string delimiters;
-	delimiters.push_back(delimiter);
-
-	return MOONG::StringTool::pop_left(str, delimiters);
-}
-
-const std::string MOONG::StringTool::pop_left_keep_origin(std::string str, const char delimiter)
+const std::string MOONG::StringTool::pop_left(std::string& input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::pop_left(str, delimiters);
+	return MOONG::StringTool::pop_left(input, delimiters);
 }
 
-const std::string MOONG::StringTool::pop_left(std::string& str, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::pop_left_keep_origin(std::string input, const char delimiter)
+{
+	std::string delimiters;
+	delimiters.push_back(delimiter);
+
+	return MOONG::StringTool::pop_left(input, delimiters);
+}
+
+const std::string MOONG::StringTool::pop_left(std::string& input, const std::string delimiters, const bool delimiter_whole_use)
 {
 	std::string head = "";
 
-	size_t index_leftmost = MOONG::StringTool::find_index_leftmost(str, delimiters, delimiter_whole_use);
+	size_t index_leftmost = MOONG::StringTool::find_index_leftmost(input, delimiters, delimiter_whole_use);
 
 	if (index_leftmost != std::string::npos)
 	{
-		head = str.substr(0, index_leftmost);
+		head = input.substr(0, index_leftmost);
 
 		if (delimiter_whole_use == true)
 		{
-			str.erase(0, index_leftmost + delimiters.length());
+			input.erase(0, index_leftmost + delimiters.length());
 		}
 		else
 		{
-			str.erase(0, index_leftmost + 1);
+			input.erase(0, index_leftmost + 1);
 		}
 	}
 
 	return head;
 }
 
-const std::string MOONG::StringTool::pop_left_keep_origin(std::string str, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::pop_left_keep_origin(std::string input, const std::string delimiters, const bool delimiter_whole_use)
 {
-	return MOONG::StringTool::pop_left(str, delimiters, delimiter_whole_use);
+	return MOONG::StringTool::pop_left(input, delimiters, delimiter_whole_use);
 }
 
 std::string MOONG::StringTool::format(const std::string format, ...)
@@ -327,53 +327,53 @@ std::string MOONG::StringTool::format(const std::string format, ...)
 	return std::string(build_string);
 }
 
-std::string& MOONG::StringTool::remove(std::string& str, const char remove_char)
+std::string& MOONG::StringTool::remove(std::string& input, const char remove_char)
 {
 	std::string remove_string;
 	remove_string = remove_char;
 
-	return MOONG::StringTool::remove(str, remove_string);
+	return MOONG::StringTool::remove(input, remove_string);
 }
 
-std::string& MOONG::StringTool::remove(std::string& str, const std::string remove_string)
+std::string& MOONG::StringTool::remove(std::string& input, const std::string remove_string)
 {
-	while (str.find(remove_string) != std::string::npos)
+	while (input.find(remove_string) != std::string::npos)
 	{
-		str.replace(str.find(remove_string), remove_string.length(), "");
+		input.replace(input.find(remove_string), remove_string.length(), "");
 	}
 
-	return str;
+	return input;
 }
 
-std::string MOONG::StringTool::remove_keep_origin(std::string str, const std::string remove_string)
+std::string MOONG::StringTool::remove_keep_origin(std::string input, const std::string remove_string)
 {
-	return MOONG::StringTool::remove(str, remove_string);
+	return MOONG::StringTool::remove(input, remove_string);
 }
 
-std::string& MOONG::StringTool::replace(std::string& str, const std::string str_find, const std::string str_change)
+std::string& MOONG::StringTool::replace(std::string& string_original, const std::string string_find, const std::string string_change)
 {
-	while(str.find(str_find) != std::string::npos)
+	while(string_original.find(string_find) != std::string::npos)
 	{
-		str.replace(str.find(str_find), str_find.length(), str_change);
+		string_original.replace(string_original.find(string_find), string_find.length(), string_change);
 	}
 
-	return str;
+	return string_original;
 }
 
-std::string MOONG::StringTool::replace_keep_origin(std::string str, const std::string str_find, const std::string str_change)
+std::string MOONG::StringTool::replace_keep_origin(std::string string_original, const std::string string_find, const std::string string_change)
 {
-	return MOONG::StringTool::replace(str, str_find, str_change);
+	return MOONG::StringTool::replace(string_original, string_find, string_change);
 }
 
-const std::vector<std::string> MOONG::StringTool::split(const std::string str, const char delimiter)
+const std::vector<std::string> MOONG::StringTool::split(const std::string input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
 
-	return MOONG::StringTool::split(str, delimiters);
+	return MOONG::StringTool::split(input, delimiters);
 }
 
-const std::vector<std::string> MOONG::StringTool::split(const std::string str, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::vector<std::string> MOONG::StringTool::split(const std::string input, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
 {
 	size_t index_temp = 0;
 	size_t index_nexe_token = INT32_MAX;
@@ -388,7 +388,7 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string str, c
 
 		if(delimiter_whole_use == true) // delimiters 문자열 전체를 하나의 구분자로 사용.
 		{
-			index_temp = str.find(delimiters, index_prev_token);
+			index_temp = input.find(delimiters, index_prev_token);
 
 			if (index_temp != std::string::npos)
 			{
@@ -401,7 +401,7 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string str, c
 		{
 			for (size_t i = 0; i < delimiters.length(); i++)
 			{
-				index_temp = str.find(delimiters.at(i), index_prev_token);
+				index_temp = input.find(delimiters.at(i), index_prev_token);
 
 				if (index_temp != std::string::npos)
 				{
@@ -417,13 +417,13 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string str, c
 
 		if (is_find_token == false)
 		{
-			return_value.push_back(str.substr(index_prev_token));
+			return_value.push_back(input.substr(index_prev_token));
 
 			break;
 		}
 		else
 		{
-			return_value.push_back(str.substr(index_prev_token, index_nexe_token - index_prev_token));
+			return_value.push_back(input.substr(index_prev_token, index_nexe_token - index_prev_token));
 
 			if(delimiter_whole_use == true)
 			{
@@ -441,43 +441,43 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string str, c
 	return return_value;
 }
 
-std::string& MOONG::StringTool::tolower(std::string& str)
+std::string& MOONG::StringTool::tolower(std::string& input)
 {
-	std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+	std::transform(input.begin(), input.end(), input.begin(), ::tolower);
 
-	return str;
+	return input;
 }
 
-std::string& MOONG::StringTool::toupper(std::string& str)
+std::string& MOONG::StringTool::toupper(std::string& input)
 {
-	std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+	std::transform(input.begin(), input.end(), input.begin(), ::toupper);
 
-	return str;
+	return input;
 }
 
-std::string MOONG::StringTool::tolower_keep_origin(std::string str)
+std::string MOONG::StringTool::tolower_keep_origin(std::string input)
 {
-	return MOONG::StringTool::tolower(str);
+	return MOONG::StringTool::tolower(input);
 }
 
-std::string MOONG::StringTool::toupper_keep_origin(std::string str)
+std::string MOONG::StringTool::toupper_keep_origin(std::string input)
 {
-	return MOONG::StringTool::toupper(str);
+	return MOONG::StringTool::toupper(input);
 }
 
-// 앞에 있는 개행 문자 제거
-std::string& MOONG::StringTool::trim_left(std::string& str)
+// 앞에 있는 화이트 스페이스 문자 제거
+std::string& MOONG::StringTool::trim_left(std::string& input)
 {
-	if(str.length() == 0)
+	if(input.length() == 0)
 	{
-		return str;
+		return input;
 	}
 
 	size_t index = 0;
 
-	for(size_t i = 0; i < str.length(); i++)
+	for(size_t i = 0; i < input.length(); i++)
 	{
-		if(str.at(i) != ' ' && str.at(i) != '\t' && str.at(i) != '\n' && str.at(i) != '\r\n')
+		if(input.at(i) != ' ' && input.at(i) != '\t' && input.at(i) != '\n' && input.at(i) != '\r\n')
 		{
 			index = i;
 
@@ -485,23 +485,23 @@ std::string& MOONG::StringTool::trim_left(std::string& str)
 		}
 	}
 
-	str.erase(0, index);
+	input.erase(0, index);
 
-	return str;
+	return input;
 }
-// 뒤에 있는 개행 문자 제거
-std::string& MOONG::StringTool::trim_right(std::string& str)
+// 뒤에 있는 화이트 스페이스 문자 제거
+std::string& MOONG::StringTool::trim_right(std::string& input)
 {
-	if(str.length() == 0)
+	if(input.length() == 0)
 	{
-		return str;
+		return input;
 	}
 
 	size_t index = 0;
 
-	for(size_t i = str.length() - 1; i >= 0; i--)
+	for(size_t i = input.length() - 1; i >= 0; i--)
 	{
-		if(str.at(i) != ' ' && str.at(i) != '\t' && str.at(i) != '\n' && str.at(i) != '\r\n')
+		if(input.at(i) != ' ' && input.at(i) != '\t' && input.at(i) != '\n' && input.at(i) != '\r\n')
 		{
 			index = i + 1;
 
@@ -509,33 +509,33 @@ std::string& MOONG::StringTool::trim_right(std::string& str)
 		}
 	}
 
-	str.erase(index);
+	input.erase(index);
 
-	return str;
+	return input;
 }
-// 양쪽 끝의 개행 문자 제거
-std::string& MOONG::StringTool::trim(std::string& str)
+// 양쪽 끝의 화이트 스페이스 문자 제거
+std::string& MOONG::StringTool::trim(std::string& input)
 {
-	return trim_left(trim_right(str));
+	return trim_left(trim_right(input));
 }
 
 // trim from start (copying)
-std::string MOONG::StringTool::trim_left_keep_origin(std::string str)
+std::string MOONG::StringTool::trim_left_keep_origin(std::string input)
 {
-	return MOONG::StringTool::trim_left(str);
+	return MOONG::StringTool::trim_left(input);
 }
 // trim from end (copying)
-std::string MOONG::StringTool::trim_right_keep_origin(std::string str)
+std::string MOONG::StringTool::trim_right_keep_origin(std::string input)
 {
-	return MOONG::StringTool::trim_right(str);
+	return MOONG::StringTool::trim_right(input);
 }
 // trim from both ends (copying)
-std::string MOONG::StringTool::trim_keep_origin(std::string str)
+std::string MOONG::StringTool::trim_keep_origin(std::string input)
 {
-	return MOONG::StringTool::trim(str);
+	return MOONG::StringTool::trim(input);
 }
 
-const std::string MOONG::StringTool::_encode_base64(const std::string& str, const bool use_url_encoding_characters/* = false*/)
+const std::string MOONG::StringTool::_encode_base64(const std::string& input, const bool use_url_encoding_characters/* = false*/)
 {
 	std::string BASE64_INDEX_TABLE;
 	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -552,21 +552,21 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& str, cons
 
 	std::string encoded_str;
 
-	for (size_t i = 0; i < str.length(); i += 3)
+	for (size_t i = 0; i < input.length(); i += 3)
 	{
-		if ((i + 2) < str.length())
+		if ((i + 2) < input.length())
 		{
-			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i + 1) & 0xF) << 2) | ((str.at(i + 2) >> 6) & 0x3));
-			encoded_str += BASE64_INDEX_TABLE.at(str.at(i + 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at((input.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at(((input.at(i) & 0x3) << 4) | ((input.at(i + 1) >> 4) & 0xF));
+			encoded_str += BASE64_INDEX_TABLE.at(((input.at(i + 1) & 0xF) << 2) | ((input.at(i + 2) >> 6) & 0x3));
+			encoded_str += BASE64_INDEX_TABLE.at(input.at(i + 2) & 0x3F);
 		}
-		else if ((i + 1) < str.length())
+		else if ((i + 1) < input.length())
 		{
-			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
-			encoded_str += BASE64_INDEX_TABLE.at(((str.at(i) & 0x3) << 4) | ((str.at(i + 1) >> 4) & 0xF));
+			encoded_str += BASE64_INDEX_TABLE.at((input.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at(((input.at(i) & 0x3) << 4) | ((input.at(i + 1) >> 4) & 0xF));
 #if _MSC_VER > 1200
-			encoded_str += BASE64_INDEX_TABLE.at((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i + 1) & 0xF)) << 2);
+			encoded_str += BASE64_INDEX_TABLE.at((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(input.at(i + 1) & 0xF)) << 2);
 #else
 			encoded_str += BASE64_INDEX_TABLE.at((str.at(i + 1) & 0xF) << 2);
 #endif
@@ -577,9 +577,9 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& str, cons
 		}
 		else
 		{
-			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) >> 2) & 0x3F);
+			encoded_str += BASE64_INDEX_TABLE.at((input.at(i) >> 2) & 0x3F);
 #if _MSC_VER > 1200
-			encoded_str += BASE64_INDEX_TABLE.at((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(str.at(i) & 0x3)) << 4);
+			encoded_str += BASE64_INDEX_TABLE.at((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(input.at(i) & 0x3)) << 4);
 #else
 			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) & 0x3) << 4);
 #endif
@@ -594,7 +594,7 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& str, cons
 	return encoded_str;
 }
 
-const std::string MOONG::StringTool::_decode_base64(const std::string& str, const bool use_url_encoding_characters/* = false*/)
+const std::string MOONG::StringTool::_decode_base64(const std::string& input, const bool use_url_encoding_characters/* = false*/)
 {
 	std::string BASE64_INDEX_TABLE;
 	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -609,7 +609,7 @@ const std::string MOONG::StringTool::_decode_base64(const std::string& str, cons
 		BASE64_INDEX_TABLE += "+/";
 	}
 
-	std::string encoded_str = str;
+	std::string encoded_str = input;
 	MOONG::StringTool::remove(encoded_str, MOONG::StringTool::BASE64_PADDING_CHAR);
 
 	size_t i = 0;
