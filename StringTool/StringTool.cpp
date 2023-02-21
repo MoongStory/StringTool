@@ -627,7 +627,7 @@ const std::string MOONG::StringTool::_decode_base64(const std::string& str, cons
 
 	for (i = 0; i < encoded_str.length(); i += 4)
 	{
-		ZeroMemory(decoded_str_block, _countof(decoded_str_block));
+		ZeroMemory(decoded_str_block, sizeof(decoded_str_block));
 
 		if ((i + 3) < encoded_str.length())
 		{

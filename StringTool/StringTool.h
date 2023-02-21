@@ -10,6 +10,11 @@
 #include <iostream>
 #include <vector>
 
+#if _MSC_VER <= 1200
+	// Visual Studio 6.0에서만 발생.
+	#pragma warning(disable: 4786) // identifier was truncated to '255' characters in the browser information.
+#endif
+
 namespace MOONG
 {
 	class StringTool
