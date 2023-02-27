@@ -568,7 +568,7 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& input, co
 #if _MSC_VER > 1200
 			encoded_str += BASE64_INDEX_TABLE.at((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(input.at(i + 1) & 0xF)) << 2);
 #else
-			encoded_str += BASE64_INDEX_TABLE.at((str.at(i + 1) & 0xF) << 2);
+			encoded_str += BASE64_INDEX_TABLE.at((input.at(i + 1) & 0xF) << 2);
 #endif
 
 			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
@@ -581,7 +581,7 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& input, co
 #if _MSC_VER > 1200
 			encoded_str += BASE64_INDEX_TABLE.at((static_cast<std::basic_string<char, std::char_traits<char>, std::allocator<char>>::size_type>(input.at(i) & 0x3)) << 4);
 #else
-			encoded_str += BASE64_INDEX_TABLE.at((str.at(i) & 0x3) << 4);
+			encoded_str += BASE64_INDEX_TABLE.at((input.at(i) & 0x3) << 4);
 #endif
 
 			encoded_str += MOONG::StringTool::BASE64_PADDING_CHAR;
