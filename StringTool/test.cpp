@@ -355,7 +355,8 @@ int main()
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 
-	//std::cout << "format\n\t[" << MOONG::StringTool::format("%d, %.2lf, %s, %4c", 3, 3.2345, "string 문자열", 'A').c_str() << "]" << std::endl;
+	std::cout << "format\n\t[" << MOONG::StringTool::format("%d, %.2lf, %s, %4c", 3, 3.2345, "string 문자열", 'A').c_str() << "]" << std::endl;
+	std::wcout << L"format\n\t[" << MOONG::StringTool::format(L"%d, %.2lf, %ws, %4c", 3, 3.2345, L"string 문자열", 'A').c_str() << L"]" << std::endl;
 
 	//std::cout << std::endl;
 	//std::cout << std::endl;
@@ -507,39 +508,39 @@ int main()
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 
-	// https://en.wikipedia.org/wiki/Base64
-	std::string test_string = "Base64와 Base64Url은 62번째와 63번째 Encoding characters가 다릅니다. Base64는 \"+/\", Base64Url는 \"-_\"로 이루어져 있습니다.";
-	std::string encoded_base64 = MOONG::StringTool::encode_base64(MOONG::ConvertDataType::string_to_utf8(test_string));
-	std::string encoded_base64_url = MOONG::StringTool::encode_base64_url(MOONG::ConvertDataType::string_to_utf8(test_string));
-	std::cout << "encode_base64\n\t[" << encoded_base64.c_str() << "]" << std::endl;
-	std::cout << "encode_base64_url\n\t[" << encoded_base64_url.c_str() << "]" << std::endl;
+	//// https://en.wikipedia.org/wiki/Base64
+	//std::string test_string = "Base64와 Base64Url은 62번째와 63번째 Encoding characters가 다릅니다. Base64는 \"+/\", Base64Url는 \"-_\"로 이루어져 있습니다.";
+	//std::string encoded_base64 = MOONG::StringTool::encode_base64(MOONG::ConvertDataType::string_to_utf8(test_string));
+	//std::string encoded_base64_url = MOONG::StringTool::encode_base64_url(MOONG::ConvertDataType::string_to_utf8(test_string));
+	//std::cout << "encode_base64\n\t[" << encoded_base64.c_str() << "]" << std::endl;
+	//std::cout << "encode_base64_url\n\t[" << encoded_base64_url.c_str() << "]" << std::endl;
 
-	std::cout << std::endl;
+	//std::cout << std::endl;
 
-	std::cout << "decode_base64\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
-	std::cout << "decode_base64_url\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
+	//std::cout << "decode_base64\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
+	//std::cout << "decode_base64_url\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
 
-	std::cout << std::endl;
+	//std::cout << std::endl;
 
-	std::cout << "decode_base64 (encode_base64_url로 인코딩 된 문자열 넘긴 경우)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64_url)).c_str() << "]" << std::endl;
-	std::cout << "decode_base64_url (encode_base64로 인코딩 된 문자열 넘긴 경우)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64)).c_str() << "]" << std::endl;
+	//std::cout << "decode_base64 (encode_base64_url로 인코딩 된 문자열 넘긴 경우)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64_url)).c_str() << "]" << std::endl;
+	//std::cout << "decode_base64_url (encode_base64로 인코딩 된 문자열 넘긴 경우)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64)).c_str() << "]" << std::endl;
 
-	std::cout << std::endl;
+	//std::cout << std::endl;
 
-	std::cout << "decode_base64\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
-	std::cout << "decode_base64_url\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
+	//std::cout << "decode_base64\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
+	//std::cout << "decode_base64_url\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
 
-	std::cout << std::endl;
+	//std::cout << std::endl;
 
-	encoded_base64 += '*';
-	encoded_base64_url += '*';
+	//encoded_base64 += '*';
+	//encoded_base64_url += '*';
 
-	std::cout << "decode_base64 (Base64 색인표에 없는 문자 추가하여 테스트)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
-	std::cout << "decode_base64_url (Base64 색인표에 없는 문자 추가하여 테스트)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
+	//std::cout << "decode_base64 (Base64 색인표에 없는 문자 추가하여 테스트)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64(encoded_base64)).c_str() << "]" << std::endl;
+	//std::cout << "decode_base64_url (Base64 색인표에 없는 문자 추가하여 테스트)\n\t[" << MOONG::ConvertDataType::utf8_to_string(MOONG::StringTool::decode_base64_url(encoded_base64_url)).c_str() << "]" << std::endl;
 
-	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
+	//std::cout << std::endl;
 
 	return 0;
 }

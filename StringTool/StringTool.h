@@ -85,6 +85,7 @@ namespace MOONG
 		static const std::string pop_left_keep_origin(std::string input, const std::string delimiters, const bool delimiter_whole_use = false);
 
 		static std::string format(const std::string format, ...);
+		static std::wstring format(const std::wstring format, ...);
 
 		static std::string& remove(std::string& input, const char remove_char);
 		static std::string& remove(std::string& input, const std::string remove_string);
@@ -114,6 +115,8 @@ namespace MOONG
 		// https://en.wikipedia.org/wiki/Base64
 		static const std::string _encode_base64(const std::string& input, const bool use_url_encoding_characters = false);
 		static const std::string _decode_base64(const std::string& input, const bool use_url_encoding_characters = false);
+
+		static const std::string _format(const std::string format, va_list arg_ptr);
 	};
 }
 #endif	// _STRING_TOOL_H_
