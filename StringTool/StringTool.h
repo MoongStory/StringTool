@@ -113,10 +113,10 @@ namespace MOONG
 	protected:
 	private:
 		// https://en.wikipedia.org/wiki/Base64
-		static const std::string _encode_base64(const std::string& input, const bool use_url_encoding_characters = false);
-		static const std::string _decode_base64(const std::string& input, const bool use_url_encoding_characters = false);
+		static const std::string encode_base64_(const std::string& input, const bool use_url_encoding_characters = false);
+		static const std::string decode_base64_(const std::string& input, const bool use_url_encoding_characters = false);
 
-		static const std::string _format(const std::string format, va_list arg_ptr);
+		static const std::string format_(const std::string format, va_list arg_ptr);
 	};
 }
 #endif	// _STRING_TOOL_H_

@@ -29,22 +29,22 @@ const int MOONG::StringTool::compare(const std::string input1, const std::string
 
 const std::string MOONG::StringTool::encode_base64(const std::string& input)
 {
-	return _encode_base64(input);
+	return encode_base64_(input);
 }
 
 const std::string MOONG::StringTool::decode_base64(const std::string& input)
 {
-	return _decode_base64(input);
+	return decode_base64_(input);
 }
 
 const std::string MOONG::StringTool::encode_base64_url(const std::string& input)
 {
-	return _encode_base64(input, true);
+	return encode_base64_(input, true);
 }
 
 const std::string MOONG::StringTool::decode_base64_url(const std::string& input)
 {
-	return _decode_base64(input, true);
+	return decode_base64_(input, true);
 }
 
 const size_t MOONG::StringTool::find_index_rightmost(const std::string input, const char delimiter)
@@ -321,7 +321,7 @@ std::string MOONG::StringTool::format(const std::string format, ...)
 	va_list arg_ptr;
 
 	va_start(arg_ptr, format);
-	output = MOONG::StringTool::_format(format, arg_ptr);
+	output = MOONG::StringTool::format_(format, arg_ptr);
 	va_end(arg_ptr);
 
 	return output;
@@ -334,7 +334,7 @@ std::wstring MOONG::StringTool::format(const std::wstring format, ...)
 	va_list arg_ptr;
 
 	va_start(arg_ptr, format);
-	output = MOONG::StringTool::_format(MOONG::ConvertDataType::wstring_to_string(format), arg_ptr);
+	output = MOONG::StringTool::format_(MOONG::ConvertDataType::wstring_to_string(format), arg_ptr);
 	va_end(arg_ptr);
 
 	return MOONG::ConvertDataType::string_to_wstring(output);
@@ -548,7 +548,7 @@ std::string MOONG::StringTool::trim_keep_origin(std::string input)
 	return MOONG::StringTool::trim(input);
 }
 
-const std::string MOONG::StringTool::_encode_base64(const std::string& input, const bool use_url_encoding_characters/* = false*/)
+const std::string MOONG::StringTool::encode_base64_(const std::string& input, const bool use_url_encoding_characters/* = false*/)
 {
 	std::string BASE64_INDEX_TABLE;
 	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -607,7 +607,7 @@ const std::string MOONG::StringTool::_encode_base64(const std::string& input, co
 	return encoded_str;
 }
 
-const std::string MOONG::StringTool::_decode_base64(const std::string& input, const bool use_url_encoding_characters/* = false*/)
+const std::string MOONG::StringTool::decode_base64_(const std::string& input, const bool use_url_encoding_characters/* = false*/)
 {
 	std::string BASE64_INDEX_TABLE;
 	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -694,7 +694,7 @@ const std::string MOONG::StringTool::_decode_base64(const std::string& input, co
 	return decoded_str;
 }
 
-const std::string MOONG::StringTool::_format(const std::string format, va_list arg_ptr)
+const std::string MOONG::StringTool::format_(const std::string format, va_list arg_ptr)
 {
 	char build_string[MOONG::StringTool::max_buf_size_] = { 0 };
 
