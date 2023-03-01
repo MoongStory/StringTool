@@ -340,6 +340,20 @@ std::wstring MOONG::StringTool::format(const std::wstring format, ...)
 	return MOONG::ConvertDataType::string_to_wstring(output);
 }
 
+std::string MOONG::StringTool::format(const std::string format, va_list arg_ptr)
+{
+	char build_string[MOONG::StringTool::max_buf_size_] = { 0 };
+
+	StringCchVPrintfA(build_string, MOONG::StringTool::max_buf_size_, format.c_str(), arg_ptr);
+
+	return std::string(build_string);
+}
+
+std::wstring MOONG::StringTool::format(const std::wstring format, va_list arg_ptr)
+{
+	return MOONG::ConvertDataType::string_to_wstring(MOONG::StringTool::format(MOONG::ConvertDataType::wstring_to_string(format), arg_ptr));
+}
+
 std::string& MOONG::StringTool::remove(std::string& input, const char remove_char)
 {
 	std::string remove_string;

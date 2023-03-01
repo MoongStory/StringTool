@@ -86,6 +86,8 @@ namespace MOONG
 
 		static std::string format(const std::string format, ...);
 		static std::wstring format(const std::wstring format, ...);
+		static std::string format(const std::string format, va_list arg_ptr);
+		static std::wstring format(const std::wstring format, va_list arg_ptr);
 
 		static std::string& remove(std::string& input, const char remove_char);
 		static std::string& remove(std::string& input, const std::string remove_string);
