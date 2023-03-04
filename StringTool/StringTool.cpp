@@ -221,6 +221,10 @@ const std::string MOONG::StringTool::pop_right(std::string& input, const std::st
 
 		input.erase(index_rightmost, input.length() - index_rightmost);
 	}
+	else
+	{
+		return input;
+	}
 
 	return tail;
 }
@@ -304,6 +308,10 @@ const std::string MOONG::StringTool::pop_left(std::string& input, const std::str
 		{
 			input.erase(0, index_leftmost + 1);
 		}
+	}
+	else
+	{
+		return input;
 	}
 
 	return head;
