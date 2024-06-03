@@ -35,7 +35,7 @@ SOFTWARE.
 #include <vector>
 
 #if _MSC_VER <= 1200
-	// Visual Studio 6.0������ �߻�.
+	// Visual Studio 6.0¿¡¼­¸¸ ¹ß»ý.
 	#pragma warning(disable: 4786) // identifier was truncated to '255' characters in the browser information.
 #endif
 
@@ -50,6 +50,7 @@ namespace MOONG
 		static const char BASE64_PADDING_CHAR;
 
 	public:
+		// TODO: JavaScript의 padStart, padEnd 기능 추가. pad_start(), pad_end()로
 		static const int compare(const std::string input1, const std::string input2, const bool ignoreCase = false);
 
 		static const std::string encode_base64(const std::string& input);
