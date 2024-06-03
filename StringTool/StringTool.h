@@ -51,6 +51,27 @@ namespace MOONG
 
 	public:
 		// TODO: JavaScript의 padStart, padEnd 기능 추가. pad_start(), pad_end()로
+		// 샘플 소스
+		/*
+		#include <iostream>
+		#include <string>
+		
+		std::string padStart(const std::string& input, size_t targetLength, char paddingChar) {
+		    if (input.length() >= targetLength) {
+		        return input;
+		    }
+		    return std::string(targetLength - input.length(), paddingChar) + input;
+		}
+		
+		int main() {
+		    int number = 5;
+		    std::string numberString = std::to_string(number);
+		    std::string paddedNumber = padStart(numberString, 2, '0');
+		    std::cout << "Padded number: " << paddedNumber << std::endl;  // 출력: 05
+		    return 0;
+		}
+		*/
+
 		static const int compare(const std::string input1, const std::string input2, const bool ignoreCase = false);
 
 		static const std::string encode_base64(const std::string& input);
