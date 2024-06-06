@@ -570,6 +570,26 @@ std::string MOONG::StringTool::trim_keep_origin(std::string input)
 	return MOONG::StringTool::trim(input);
 }
 
+std::string MOONG::StringTool::pad_start(const std::string& input, const size_t target_length, const char padding_char)
+{
+	if (input.length() >= target_length)
+	{
+		return input;
+	}
+
+	return std::string(target_length - input.length(), padding_char) + input;
+}
+
+std::string MOONG::StringTool::pad_end(const std::string& input, const size_t target_length, const char padding_char)
+{
+	if (input.length() >= target_length)
+	{
+		return input;
+	}
+
+	return input + std::string(target_length - input.length(), padding_char);
+}
+
 const std::string MOONG::StringTool::encode_base64_(const std::string& input, const bool use_url_encoding_characters/* = false*/)
 {
 	std::string BASE64_INDEX_TABLE;

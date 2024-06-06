@@ -355,8 +355,8 @@ int main()
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 
-	std::cout << "format\n\t[" << MOONG::StringTool::format("%d, %.2lf, %s, %4c", 3, 3.2345, "string 문자열", 'A').c_str() << "]" << std::endl;
-	std::wcout << L"format\n\t[" << MOONG::StringTool::format(L"%d, %.2lf, %ws, %4c", 3, 3.2345, L"string 문자열", 'A').c_str() << L"]" << std::endl;
+	//std::cout << "format\n\t[" << MOONG::StringTool::format("%d, %.2lf, %s, %4c", 3, 3.2345, "string 문자열", 'A').c_str() << "]" << std::endl;
+	//std::wcout << L"format\n\t[" << MOONG::StringTool::format(L"%d, %.2lf, %ws, %4c", 3, 3.2345, L"string 문자열", 'A').c_str() << L"]" << std::endl;
 
 	//std::cout << std::endl;
 	//std::cout << std::endl;
@@ -541,6 +541,10 @@ int main()
 	//std::cout << std::endl;
 	//std::cout << std::endl;
 	//std::cout << std::endl;
+
+	std::string test = "pad";
+	std::cout << "pad_start()\n\t[" << MOONG::StringTool::pad_start(test, 10, '+') << "]" << std::endl;
+	std::cout << "pad_end()\n\t[" << MOONG::StringTool::pad_end(test, 10, '+') << "]" << std::endl;
 
 	return 0;
 }
