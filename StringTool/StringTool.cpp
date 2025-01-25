@@ -3,7 +3,7 @@
 #include "../../ConvertDataType/ConvertDataType/ConvertDataType.h"
 
 #include <functional>
-#include <algorithm>	// std::transform 사용을 위해 필요.
+#include <algorithm> // std::transform 사용을 위해 필요.
 
 #include <windows.h>
 #include <strsafe.h>
@@ -12,7 +12,7 @@ const unsigned int MOONG::StringTool::max_buf_size_ = 2048;
 const char MOONG::StringTool::BASE64_PADDING_CHAR = '=';
 
 #ifndef INT32_MAX
-#define INT32_MAX 2147483647 
+#define INT32_MAX 2147483647
 #endif
 
 const int MOONG::StringTool::compare(const std::string input1, const std::string iniput2, const bool ignoreCase)
@@ -27,22 +27,22 @@ const int MOONG::StringTool::compare(const std::string input1, const std::string
 	}
 }
 
-const std::string MOONG::StringTool::encode_base64(const std::string& input)
+const std::string MOONG::StringTool::encode_base64(const std::string &input)
 {
 	return encode_base64_(input);
 }
 
-const std::string MOONG::StringTool::decode_base64(const std::string& input)
+const std::string MOONG::StringTool::decode_base64(const std::string &input)
 {
 	return decode_base64_(input);
 }
 
-const std::string MOONG::StringTool::encode_base64_url(const std::string& input)
+const std::string MOONG::StringTool::encode_base64_url(const std::string &input)
 {
 	return encode_base64_(input, true);
 }
 
-const std::string MOONG::StringTool::decode_base64_url(const std::string& input)
+const std::string MOONG::StringTool::decode_base64_url(const std::string &input)
 {
 	return decode_base64_(input, true);
 }
@@ -55,7 +55,7 @@ const size_t MOONG::StringTool::find_index_rightmost(const std::string input, co
 	return MOONG::StringTool::find_index_rightmost(input, delimiters);
 }
 
-const size_t MOONG::StringTool::find_index_rightmost(const std::string input, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const size_t MOONG::StringTool::find_index_rightmost(const std::string input, const std::string delimiters, const bool delimiter_whole_use /* = false*/)
 {
 	size_t index_rightmost = 0;
 	bool isFindDelimiter = false;
@@ -93,7 +93,7 @@ const size_t MOONG::StringTool::find_index_rightmost(const std::string input, co
 			return std::string::npos;
 		}
 	}
-	
+
 	return index_rightmost;
 }
 
@@ -147,7 +147,7 @@ const size_t MOONG::StringTool::find_index_leftmost(const std::string input, con
 	return index_leftmost;
 }
 
-const std::string& MOONG::StringTool::cut_right(std::string& input, const char delimiter)
+const std::string &MOONG::StringTool::cut_right(std::string &input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
@@ -155,7 +155,7 @@ const std::string& MOONG::StringTool::cut_right(std::string& input, const char d
 	return MOONG::StringTool::cut_right(input, delimiters);
 }
 
-const std::string  MOONG::StringTool::cut_right_keep_origin(std::string input, const char delimiter)
+const std::string MOONG::StringTool::cut_right_keep_origin(std::string input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
@@ -163,7 +163,7 @@ const std::string  MOONG::StringTool::cut_right_keep_origin(std::string input, c
 	return MOONG::StringTool::cut_right(input, delimiters);
 }
 
-const std::string& MOONG::StringTool::cut_right(std::string& input, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::string &MOONG::StringTool::cut_right(std::string &input, const std::string delimiters, const bool delimiter_whole_use /* = false*/)
 {
 	size_t index_rightmost = MOONG::StringTool::find_index_rightmost(input, delimiters, delimiter_whole_use);
 
@@ -175,12 +175,12 @@ const std::string& MOONG::StringTool::cut_right(std::string& input, const std::s
 	return input;
 }
 
-const std::string MOONG::StringTool::cut_right_keep_origin(std::string input, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::string MOONG::StringTool::cut_right_keep_origin(std::string input, const std::string delimiters, const bool delimiter_whole_use /* = false*/)
 {
 	return MOONG::StringTool::cut_right(input, delimiters, delimiter_whole_use);
 }
 
-const std::string MOONG::StringTool::pop_right(std::string& input, const char delimiter)
+const std::string MOONG::StringTool::pop_right(std::string &input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
@@ -196,7 +196,7 @@ const std::string MOONG::StringTool::pop_right_keep_origin(std::string input, co
 	return MOONG::StringTool::pop_right(input, delimiters);
 }
 
-const std::string MOONG::StringTool::pop_right(std::string& input, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::pop_right(std::string &input, const std::string delimiters, const bool delimiter_whole_use)
 {
 	std::string tail = "";
 
@@ -234,7 +234,7 @@ const std::string MOONG::StringTool::pop_right_keep_origin(std::string input, co
 	return MOONG::StringTool::pop_right(input, delimiters, delimiter_whole_use);
 }
 
-const std::string& MOONG::StringTool::cut_left(std::string& input, const char delimiter)
+const std::string &MOONG::StringTool::cut_left(std::string &input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
@@ -250,7 +250,7 @@ const std::string MOONG::StringTool::cut_left_keep_origin(std::string input, con
 	return MOONG::StringTool::cut_left(input, delimiters);
 }
 
-const std::string& MOONG::StringTool::cut_left(std::string& input, const std::string delimiters, const bool delimiter_whole_use)
+const std::string &MOONG::StringTool::cut_left(std::string &input, const std::string delimiters, const bool delimiter_whole_use)
 {
 	size_t index_leftmost = MOONG::StringTool::find_index_leftmost(input, delimiters, delimiter_whole_use);
 
@@ -274,7 +274,7 @@ const std::string MOONG::StringTool::cut_left_keep_origin(std::string input, con
 	return MOONG::StringTool::cut_left(input, delimiters, delimiter_whole_use);
 }
 
-const std::string MOONG::StringTool::pop_left(std::string& input, const char delimiter)
+const std::string MOONG::StringTool::pop_left(std::string &input, const char delimiter)
 {
 	std::string delimiters;
 	delimiters.push_back(delimiter);
@@ -290,7 +290,7 @@ const std::string MOONG::StringTool::pop_left_keep_origin(std::string input, con
 	return MOONG::StringTool::pop_left(input, delimiters);
 }
 
-const std::string MOONG::StringTool::pop_left(std::string& input, const std::string delimiters, const bool delimiter_whole_use)
+const std::string MOONG::StringTool::pop_left(std::string &input, const std::string delimiters, const bool delimiter_whole_use)
 {
 	std::string head = "";
 
@@ -350,7 +350,7 @@ std::wstring MOONG::StringTool::format(const std::wstring format, ...)
 
 std::string MOONG::StringTool::format(const std::string format, va_list arg_ptr)
 {
-	char build_string[MOONG::StringTool::max_buf_size_] = { 0 };
+	char build_string[MOONG::StringTool::max_buf_size_] = {0};
 
 	StringCchVPrintfA(build_string, MOONG::StringTool::max_buf_size_, format.c_str(), arg_ptr);
 
@@ -362,7 +362,7 @@ std::wstring MOONG::StringTool::format(const std::wstring format, va_list arg_pt
 	return MOONG::ConvertDataType::string_to_wstring(MOONG::StringTool::format(MOONG::ConvertDataType::wstring_to_string(format), arg_ptr));
 }
 
-std::string& MOONG::StringTool::remove(std::string& input, const char remove_char)
+std::string &MOONG::StringTool::remove(std::string &input, const char remove_char)
 {
 	std::string remove_string;
 	remove_string = remove_char;
@@ -370,7 +370,7 @@ std::string& MOONG::StringTool::remove(std::string& input, const char remove_cha
 	return MOONG::StringTool::remove(input, remove_string);
 }
 
-std::string& MOONG::StringTool::remove(std::string& input, const std::string remove_string)
+std::string &MOONG::StringTool::remove(std::string &input, const std::string remove_string)
 {
 	while (input.find(remove_string) != std::string::npos)
 	{
@@ -385,9 +385,9 @@ std::string MOONG::StringTool::remove_keep_origin(std::string input, const std::
 	return MOONG::StringTool::remove(input, remove_string);
 }
 
-std::string& MOONG::StringTool::replace(std::string& string_original, const std::string string_find, const std::string string_change)
+std::string &MOONG::StringTool::replace(std::string &string_original, const std::string string_find, const std::string string_change)
 {
-	while(string_original.find(string_find) != std::string::npos)
+	while (string_original.find(string_find) != std::string::npos)
 	{
 		string_original.replace(string_original.find(string_find), string_find.length(), string_change);
 	}
@@ -408,7 +408,7 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string input,
 	return MOONG::StringTool::split(input, delimiters);
 }
 
-const std::vector<std::string> MOONG::StringTool::split(const std::string input, const std::string delimiters, const bool delimiter_whole_use/* = false*/)
+const std::vector<std::string> MOONG::StringTool::split(const std::string input, const std::string delimiters, const bool delimiter_whole_use /* = false*/)
 {
 	size_t index_temp = 0;
 	size_t index_nexe_token = INT32_MAX;
@@ -421,7 +421,7 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string input,
 	{
 		is_find_token = false;
 
-		if(delimiter_whole_use == true) // delimiters 문자열 전체를 하나의 구분자로 사용.
+		if (delimiter_whole_use == true) // delimiters 문자열 전체를 하나의 구분자로 사용.
 		{
 			index_temp = input.find(delimiters, index_prev_token);
 
@@ -460,7 +460,7 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string input,
 		{
 			return_value.push_back(input.substr(index_prev_token, index_nexe_token - index_prev_token));
 
-			if(delimiter_whole_use == true)
+			if (delimiter_whole_use == true)
 			{
 				index_prev_token = index_nexe_token + delimiters.length();
 			}
@@ -468,7 +468,7 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string input,
 			{
 				index_prev_token = index_nexe_token + 1;
 			}
-			
+
 			index_nexe_token = INT32_MAX;
 		}
 	}
@@ -476,14 +476,14 @@ const std::vector<std::string> MOONG::StringTool::split(const std::string input,
 	return return_value;
 }
 
-std::string& MOONG::StringTool::tolower(std::string& input)
+std::string &MOONG::StringTool::tolower(std::string &input)
 {
 	std::transform(input.begin(), input.end(), input.begin(), ::tolower);
 
 	return input;
 }
 
-std::string& MOONG::StringTool::toupper(std::string& input)
+std::string &MOONG::StringTool::toupper(std::string &input)
 {
 	std::transform(input.begin(), input.end(), input.begin(), ::toupper);
 
@@ -501,18 +501,18 @@ std::string MOONG::StringTool::toupper_keep_origin(std::string input)
 }
 
 // 앞에 있는 화이트 스페이스 문자 제거
-std::string& MOONG::StringTool::trim_left(std::string& input)
+std::string &MOONG::StringTool::trim_left(std::string &input)
 {
-	if(input.length() == 0)
+	if (input.length() == 0)
 	{
 		return input;
 	}
 
 	size_t index = 0;
 
-	for(size_t i = 0; i < input.length(); i++)
+	for (size_t i = 0; i < input.length(); i++)
 	{
-		if(input.at(i) != ' ' && input.at(i) != '\t' && input.at(i) != '\n' && input.at(i) != '\r\n')
+		if (input.at(i) != ' ' && input.at(i) != '\t' && input.at(i) != '\n' && input.at(i) != '\r\n')
 		{
 			index = i;
 
@@ -525,18 +525,18 @@ std::string& MOONG::StringTool::trim_left(std::string& input)
 	return input;
 }
 // 뒤에 있는 화이트 스페이스 문자 제거
-std::string& MOONG::StringTool::trim_right(std::string& input)
+std::string &MOONG::StringTool::trim_right(std::string &input)
 {
-	if(input.length() == 0)
+	if (input.length() == 0)
 	{
 		return input;
 	}
 
 	size_t index = 0;
 
-	for(size_t i = input.length() - 1; i >= 0; i--)
+	for (size_t i = input.length() - 1; i >= 0; i--)
 	{
-		if(input.at(i) != ' ' && input.at(i) != '\t' && input.at(i) != '\n' && input.at(i) != '\r\n')
+		if (input.at(i) != ' ' && input.at(i) != '\t' && input.at(i) != '\n' && input.at(i) != '\r\n')
 		{
 			index = i + 1;
 
@@ -549,7 +549,7 @@ std::string& MOONG::StringTool::trim_right(std::string& input)
 	return input;
 }
 // 양쪽 끝의 화이트 스페이스 문자 제거
-std::string& MOONG::StringTool::trim(std::string& input)
+std::string &MOONG::StringTool::trim(std::string &input)
 {
 	return trim_left(trim_right(input));
 }
@@ -570,7 +570,7 @@ std::string MOONG::StringTool::trim_keep_origin(std::string input)
 	return MOONG::StringTool::trim(input);
 }
 
-std::string MOONG::StringTool::pad_start(const std::string& input, const size_t target_length, const char padding_char)
+std::string MOONG::StringTool::pad_start(const std::string &input, const size_t target_length, const char padding_char)
 {
 	if (input.length() >= target_length)
 	{
@@ -580,7 +580,7 @@ std::string MOONG::StringTool::pad_start(const std::string& input, const size_t 
 	return std::string(target_length - input.length(), padding_char) + input;
 }
 
-std::string MOONG::StringTool::pad_end(const std::string& input, const size_t target_length, const char padding_char)
+std::string MOONG::StringTool::pad_end(const std::string &input, const size_t target_length, const char padding_char)
 {
 	if (input.length() >= target_length)
 	{
@@ -590,7 +590,7 @@ std::string MOONG::StringTool::pad_end(const std::string& input, const size_t ta
 	return input + std::string(target_length - input.length(), padding_char);
 }
 
-const std::string MOONG::StringTool::encode_base64_(const std::string& input, const bool use_url_encoding_characters/* = false*/)
+const std::string MOONG::StringTool::encode_base64_(const std::string &input, const bool use_url_encoding_characters /* = false*/)
 {
 	std::string BASE64_INDEX_TABLE;
 	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -649,7 +649,7 @@ const std::string MOONG::StringTool::encode_base64_(const std::string& input, co
 	return encoded_str;
 }
 
-const std::string MOONG::StringTool::decode_base64_(const std::string& input, const bool use_url_encoding_characters/* = false*/)
+const std::string MOONG::StringTool::decode_base64_(const std::string &input, const bool use_url_encoding_characters /* = false*/)
 {
 	std::string BASE64_INDEX_TABLE;
 	BASE64_INDEX_TABLE += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -678,7 +678,7 @@ const std::string MOONG::StringTool::decode_base64_(const std::string& input, co
 	}
 
 	std::string decoded_str;
-	char decoded_str_block[4] = { 0 };
+	char decoded_str_block[4] = {0};
 
 	for (i = 0; i < encoded_str.length(); i += 4)
 	{
@@ -738,7 +738,7 @@ const std::string MOONG::StringTool::decode_base64_(const std::string& input, co
 
 const std::string MOONG::StringTool::format_(const std::string format, va_list arg_ptr)
 {
-	char build_string[MOONG::StringTool::max_buf_size_] = { 0 };
+	char build_string[MOONG::StringTool::max_buf_size_] = {0};
 
 	StringCchVPrintfA(build_string, MOONG::StringTool::max_buf_size_, format.c_str(), arg_ptr);
 
